@@ -552,3 +552,80 @@ Javascript disabled
 		@include transform(translateY(0));
 	}
 }
+
+/* -------------------------------- 
+
+xtype 
+
+-------------------------------- */
+
+.cd-headline.type {
+	
+	.cd-words-wrapper {
+		vertical-align: top;
+		overflow: hidden;
+		position: relative;
+
+		&::after {
+			/* vertical bar */
+			content: '';
+			position: absolute;
+			right: 0;
+			@include center(y);
+			height: 90%;
+			width: 1px;
+			background-color: $color-1;
+		}
+
+		&.waiting::after {
+			@include animation(cd-pulse 1s infinite);
+		} 
+
+		&.selected {
+			background-color: $color-1;
+
+			&::after {
+				visibility: hidden;
+			}
+
+			b {
+				color: $color-3;
+			}
+		}
+	}
+
+	b {
+		visibility: hidden;
+
+		&.is-visible {
+			visibility: visible;
+		}
+	}
+
+	i {
+		position: absolute;
+		visibility: hidden;
+
+		&.in {
+			position: relative;
+			visibility: visible;
+		}
+	}
+}
+
+@include keyframes(cd-pulse) {
+	0% {
+		@include transform(translateY(-50%) scale(1));
+		opacity: 1;
+	}
+
+	40% {
+		@include transform(translateY(-50%) scale(0.9));
+		opacity: 0;
+	}
+
+	100% {
+		@include transform(translateY(-50%) scale(0));
+		opacity: 0;
+	}
+}
