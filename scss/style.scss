@@ -1,5 +1,7 @@
 @import 'bourbon/bourbon'; // http://bourbon.io/
 
+@import 'magnific-popup'; // colors, fonts etc...
+
 @import '../partials/variables'; // colors, fonts etc...
 
 @import '../partials/mixins'; // custom mixins
@@ -14,6 +16,7 @@ Primary style
 
 *, *::after, *::before {
 	box-sizing: border-box;
+	outline: none;
 }
 
 html {
@@ -57,22 +60,29 @@ Header
 header {
 	height: 170px;
 	line-height: 170px;
-	text-align: center;
+	text-align: left;
 	background: $color-8;
-
+	
 	h1 {
 		font-size: 2.2rem;
 		color: $color-1;
 	}
 
 	@include MQ(M) {
-		height: 200px;
-		line-height: 200px;
+		height: 400px;
+		line-height: 400px;
 
 		h1 {
-			font-size: 3rem;
+			font-size: 4rem;
 		}
 	}
+	
+}
+
+.cd-intro {
+	width: 90%;
+	margin: 0px auto;
+	max-width: 668px;
 }
 
 /* -------------------------------- 
@@ -329,7 +339,7 @@ folding panel
 		&::after {
 			@include transform-origin(right center);
 			@include transform(translateX(-100%) rotateY(-90deg));
-			background-color: darken($color-3, 10%);
+			background-color: $white;
 		}
 	}
 
@@ -338,7 +348,7 @@ folding panel
 		display: none;
 
 		&::after {
-			background-color: lighten($color-3, 12%);
+			background-color: $white;
 		}
 	}
 
@@ -394,7 +404,7 @@ folding panel
 		}
 
 		.fold-right::after {
-			background-color: lighten($color-3, 12%);
+			background-color: $white;
 		}
 
 		.cd-close {
@@ -447,6 +457,7 @@ folding panel
 	height: 100%;
 	width: 100%;
 	padding: 4em 2em;
+	background: $white;
 
 	visibility: hidden;
 	@include transition(visibility 0s $fold-content-animation);
@@ -499,7 +510,7 @@ folding panel
 			@include transform(translateY(0));
 		}
 
-		h2 {
+		h2, h3, .zoom-gallery {
 			@include transition(transform $fold-content-animation/2 $fold-animation, opacity $fold-content-animation/2 $fold-animation);
 		}
 
@@ -545,11 +556,27 @@ Javascript disabled
 	position: static;
 	visibility: visible;
 	height: auto;
-	background-color: $color-3;
+	background-color: $white;
 
 	> * {
 		opacity: 1;
 		@include transform(translateY(0));
+	}
+}
+
+/* -------------------------------- 
+
+gallery
+
+-------------------------------- */
+.zoom-gallery {
+	img {
+		margin:20px;
+		border-radius: 10px;
+	}
+	
+	img:hover{
+		opacity: .8;
 	}
 }
 

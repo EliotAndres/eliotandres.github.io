@@ -1,4 +1,30 @@
 jQuery(document).ready(function($){
+
+	var enableGallery = function() {
+			$('.zoom-gallery').magnificPopup({
+			delegate: 'a',
+			type: 'image',
+			closeOnContentClick: false,
+			closeBtnInside: false,
+			mainClass: 'mfp-with-zoom mfp-img-mobile',
+			image: {
+				verticalFit: true
+			},
+			gallery: {
+				enabled: true
+			},
+			zoom: {
+				enabled: true,
+				duration: 300, // don't foget to change the duration also in CSS
+				opener: function(element) {
+					return element.find('img');
+				}
+			}
+			
+		});
+	}
+
+//CODY HOUSE .Co code
 	var gallery = $('.cd-gallery'),
 		foldingPanel = $('.cd-folding-panel'),
 		mainContent = $('.cd-main');
@@ -49,7 +75,7 @@ jQuery(document).ready(function($){
 					foldingPanel.addClass('is-open');
 					mainContent.addClass('fold-is-open');
 				}, 100);
-				
+				enableGallery();
 			});
 		} else {
 			/* close the folding panel */
@@ -77,7 +103,7 @@ jQuery(document).ready(function($){
 	
 	
 	//set animation timing
-	var animationDelay = 2500,
+	var animationDelay = 1500,
 		//loading bar effect
 		barAnimationDelay = 3800,
 		barWaiting = barAnimationDelay - 3000, //3000 is the duration of the transition on the loading bar - set in the scss/css file
@@ -228,4 +254,5 @@ jQuery(document).ready(function($){
 		$oldWord.removeClass('is-visible').addClass('is-hidden');
 		$newWord.removeClass('is-hidden').addClass('is-visible');
 	}
+	
 });
