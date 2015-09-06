@@ -422,23 +422,34 @@ Header
 -------------------------------- */
 header {
   height: 170px;
-  line-height: 170px;
   text-align: left;
-  background: white; }
+  background: white;
+  position: relative; }
   header h1 {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     color: #dd4b39; }
+  @media only screen and (min-width: 480px) {
+    header {
+      height: 300px; }
+      header h1 {
+        font-size: 1.9rem; } }
   @media only screen and (min-width: 600px) {
     header {
-      height: 400px;
-      line-height: 400px; }
+      height: 400px; }
       header h1 {
-        font-size: 4rem; } }
+        font-size: 3.5rem; } }
 
 .cd-intro {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
   width: 90%;
   margin: 0px auto;
   max-width: 668px; }
+  @media only screen and (min-width: 600px) {
+    .cd-intro {
+      bottom: 40px;
+      left: 40px; } }
 
 /* -------------------------------- 
 
@@ -934,11 +945,14 @@ Javascript disabled
 gallery
 
 -------------------------------- */
-.zoom-gallery img {
-  margin: 20px;
-  border-radius: 10px; }
-.zoom-gallery img:hover {
-  opacity: .8; }
+.zoom-gallery {
+  text-align: center; }
+  .zoom-gallery img {
+    margin: 20px;
+    border-radius: 10px;
+    width: 35%; }
+  .zoom-gallery img:hover {
+    opacity: .8; }
 
 /* -------------------------------- 
 
