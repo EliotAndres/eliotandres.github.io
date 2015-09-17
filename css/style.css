@@ -956,6 +956,36 @@ gallery
 
 /* -------------------------------- 
 
+Header logo 
+
+-------------------------------- */
+.hexagon {
+  padding: 20px; }
+
+.hexagon-logo {
+  width: 60px;
+  transition: all 1s cubic-bezier(0, 1.8, 1, 1.8); }
+
+@media only screen and (min-width: 600px) {
+  .hexagon-logo {
+    width: 120px; }
+
+  .hexagon {
+    padding: 40px; } }
+.hexagon-logo:hover {
+  cursor: pointer;
+  transform: scale(1.1); }
+
+/* -------------------------------- 
+
+Header menu 
+
+-------------------------------- */
+.menu {
+  float: right; }
+
+/* -------------------------------- 
+
 xtype 
 
 -------------------------------- */
