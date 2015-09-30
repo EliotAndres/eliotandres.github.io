@@ -635,9 +635,30 @@ Header logo
 Header menu 
 
 -------------------------------- */
-.menu {
-	float: right;
+.nav-wrapper {
+	position: absolute;
+	right: 60px;
+	top: 60px;
 }
+
+.main-nav {
+	list-style: none;
+	
+	li {
+		float: left;
+		margin: 15px;
+		a {
+			font-size: 18px;
+			color: $color-1;
+		}
+		a:hover {
+			color: red;
+			color: rgba($color-1, 0.8);
+		}
+	}
+	
+}
+
 
 /* -------------------------------- 
 

@@ -981,8 +981,22 @@ Header logo
 Header menu 
 
 -------------------------------- */
-.menu {
-  float: right; }
+.nav-wrapper {
+  position: absolute;
+  right: 60px;
+  top: 60px; }
+
+.main-nav {
+  list-style: none; }
+  .main-nav li {
+    float: left;
+    margin: 15px; }
+    .main-nav li a {
+      font-size: 18px;
+      color: #dd4b39; }
+    .main-nav li a:hover {
+      color: red;
+      color: rgba(221, 75, 57, 0.8); }
 
 /* -------------------------------- 
 
