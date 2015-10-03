@@ -21,7 +21,7 @@
 			<nav class="nav-wrapper">
 				<ul class="main-nav">
 					<li><a class="scrollTo" href="#projects">Projects</a></li>
-					<li><a href="">Contact</a></li>
+					<li><a class="scrollTo" href="#contact">Contact</a></li>
 				</ul>
 			</nav>
 			<section class="cd-intro">
@@ -72,8 +72,8 @@
 			<li class="cd-item">
 				<a href="item-4.html">
 					<div>
-						<h2>Vide Dressing</h2>
-						<p>Hybrid App</p>
+						<h2>Playlist Player</h2>
+						<p>Native App</p>
 						<b>View More</b>
 					</div>
 				</a>
@@ -82,7 +82,7 @@
 			<li class="cd-item">
 				<a href="item-5.html">
 					<div>
-						<h2>Pop Valet</h2>
+						<h2>Vide dressing</h2>
 						<p>Hybrid App</p>
 						<b>View More</b>
 					</div>
@@ -92,19 +92,53 @@
 			<li class="cd-item">
 				<a href="item-4.html">
 					<div>
-						<h2>Vide Dressing</h2>
-						<p>Hybrid App</p>
+						<h2>One more thing</h2>
+						<p>What I also worked on</p>
 						<b>View More</b>
 					</div>
 				</a>
 			</li>
 		</ul> <!-- .cd-gallery -->
 	</main> <!-- .cd-main -->
+	
+	<form id="contact" class="cd-form floating-labels" action="http://formspree.io/eliot.andres@free.fr" method="POST">
+		<fieldset>
+			<legend>Contact Me</legend>
+	
+			<div class="icon">
+				<label class="cd-label" for="cd-name">Name</label>
+				<input class="user" type="text" name="name" id="cd-name" required>
+		    </div> 
+	
+		    <div class="icon">
+		    	<label class="cd-label" for="cd-email">Email</label>
+				<input class="email" type="email" name="_replyto" id="cd-email" required>
+		    </div>
+		    
+			<div class="icon">
+				<label class="cd-label" for="cd-textarea">Type your message here</label>
+	  			<textarea class="message" name="cd-textarea" id="cd-textarea" required></textarea>
+			</div>
+			
+			<input type="text" name="_gotcha" style="display:none" />
+			
+			<div>
+		      	<input type="submit" value="Send !">
+		    </div>
+		</fieldset>
+	</form>
+	
 	<footer>
-				<h1>
-					test
-				</h1>
-	</footer> <!-- cd-intro -->
+		<span>
+			  Made with love in Paris
+		</span>
+		<span>
+			// Most of the design is from <a target="_blank" href="https://codyhouse.co/"> Cody House </a>
+		</span>
+		<span>
+			// My <a target="_blank" href="files/EliotAndres.pdf">resumé</a>
+		</span>
+	</footer> 
 
 	<div class="cd-folding-panel">
 		
