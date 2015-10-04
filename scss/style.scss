@@ -29,7 +29,7 @@ body {
 		family: $primary-font; // variables inside partials > _variables.scss
 	}
 	color: $color-1;
-	background-color: $white;
+	background-color: $lightgrey;
 }
 
 a {
@@ -768,7 +768,6 @@ Form
 	max-width: $M; // breakpoints inside partials > _layout.scss
 	margin: 4em auto;
 	@include clearfix;
-	background: $white;
 	
 	fieldset {
 		margin: 24px 0;
@@ -936,7 +935,6 @@ Custom icons
 	[required].message, .message {
 		background: url('../img/cd-icon-message.svg') no-repeat 16px 16px;
 	}
-
 }
 
 /* -------------------------------- 
@@ -993,4 +991,14 @@ footer {
 	text-align: center;
 	font-size: 12px;
 	margin-bottom: 10px;
+}
+
+/* -------------------------------- 
+
+App iframe
+
+-------------------------------- */
+.app_showcase {
+	margin: 0 auto;
+	display: block;
 }
