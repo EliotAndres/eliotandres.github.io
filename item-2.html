@@ -12,22 +12,25 @@
 </head>
 <body>
 	<div class="cd-fold-content single-page">
-		<h2>Artips</h2>
-		<em>Quality art tips // Made at <a target= "_blank" href="http://bamlab.fr/">BAM</a></em>
+		<h2>So You Like That Song</h2>
+		<em>
+			Music recommendation
+			<a target= "_blank" href="http://soyoulikethatsong.com/">(Demo)</a>
+		</em>
 		<h3>The project</h3>
 		<p>
-			Although we always work with hybrid technology, Artips was the exception. The client came to us with a native codebase (iOS and Android) and asked us to interface a webview with his app. When you open the app, the content you see is in a webview. But when you tap a 'special edition', it opens a native view.
+			I was frustrated with Soundcloud's recommendations (it got a lot better lately !).
+			I decided to build my own. You select a track (the seed) and the app fetches playlists containing it.
+			It then stacks all the tracks and sorts them by number of occurences.
 		</p>
 		<h3>The stack</h3>
 		<p>
-			Along with the usual Ionic + Angular we always use, we took advantage of the <a target= "_blank" href="https://github.com/j3k0/cordova-plugin-purchase">Cordova payment plugin</a>. We also made our own plugin to interface with the native views. As for the backend, our needs were very simple, so we used <a target= "_blank" href="https://www.firebase.com/">Firebase</a>.
+			The front-end uses Angular.js and the backend is is plain node.js.
 		</p>
-		<h3>Screens</h3>
-		<div class="zoom-gallery">
-			<a href="img/artips/artips.jpg">
-				<img src="img/artips/artips.jpg">
-			</a>
-		</div>
+		<h3>Demo</h3>
+		<p>
+			<a target= "_blank" href="http://soyoulikethatsong.com/">You can find a demo here</a>
+		</p>
 	</div>
 </body>
 <script src="js/jquery-2.1.1.js"></script>
