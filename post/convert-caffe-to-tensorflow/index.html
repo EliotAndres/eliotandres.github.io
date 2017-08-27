@@ -1,111 +1,55 @@
 <!DOCTYPE html>
-<html lang="en-us">
-	<head>
-    <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="Eliot Andres blog">
-<meta name="description" content="While the models are training">
-<meta name="generator" content="Hugo 0.20.7" />
-<title>Converting a Caffe model to Tensorflow</title>
-<link rel="shortcut icon" href="http://ndres.me/images/favicon.png">
-<link rel="stylesheet" href="http://ndres.me/css/style.css">
-<link rel="stylesheet" href="http://ndres.me/css/highlight.css">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.20.7" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>Converting a Caffe model to Tensorflow &middot; Eliot Andres blog</title>
+  
+
+  
+  <link rel="stylesheet" href="http://ndres.mecss/print.css" media="print">
+  <link rel="stylesheet" href="http://ndres.mecss/poole.css">
+  <link rel="stylesheet" href="http://ndres.mecss/syntax.css">
+  <link rel="stylesheet" href="http://ndres.mecss/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://ndres.me/images/favicon.png">
+  <link rel="shortcut icon" href="http://ndres.me/images/favicon.png">
 
 
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Eliot Andres blog" />
+</head>
 
-<link rel="stylesheet" href="http://ndres.me/css/monosocialiconsfont.css">
+<body class=" ">
 
-
-
-<link href="http://ndres.me/index.xml" rel="alternate" type="application/rss+xml" title="Eliot Andres blog" />
-
-
-<meta property="og:title" content="Converting a Caffe model to Tensorflow" />
-<meta property="og:description" content="Converting a Caffe model to Tensorflow The Caffe Model Zoo is an extraordinary place where reasearcher share their models. Caffe is an awesome framework, but you might want to use Tensorflow instead. In this blog post, I&rsquo;ll show you how to convert the Places 365 model to Tensorflow.
-Using Caffe-Tensorflow to convert your model Your best bet is to use the awesome caffe-tensorflow. This project takes a prototxt file as an input and converts it to a python file so you can use the model with Tensorflow." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://ndres.me/post/convert-caffe-to-tensorflow/" />
-
+  <div class="content container">
+      <div class="main-nav">
+    <a href="/">Home</a>
+    |
+    <a href="/about/">About</a>
+</div>
 
 
-<meta property="article:published_time" content="2017-06-07T23:02:15&#43;02:00"/>
-<meta property="article:modified_time" content="2017-06-07T23:02:15&#43;02:00"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<meta itemprop="name" content="Converting a Caffe model to Tensorflow">
-<meta itemprop="description" content="Converting a Caffe model to Tensorflow The Caffe Model Zoo is an extraordinary place where reasearcher share their models. Caffe is an awesome framework, but you might want to use Tensorflow instead. In this blog post, I&rsquo;ll show you how to convert the Places 365 model to Tensorflow.
-Using Caffe-Tensorflow to convert your model Your best bet is to use the awesome caffe-tensorflow. This project takes a prototxt file as an input and converts it to a python file so you can use the model with Tensorflow.">
-
-
-<meta itemprop="dateModified" content="2017-06-07T23:02:15&#43;02:00" />
-<meta itemprop="wordCount" content="608">
-
-
-
-<meta itemprop="keywords" content="" />
-
-
-
-  <meta name="twitter:card" content="summary"/>
-
-
-
-<meta name="twitter:text:title" content="Converting a Caffe model to Tensorflow"/>
-<meta name="twitter:title" content="Converting a Caffe model to Tensorflow"/>
-<meta name="twitter:description" content="Converting a Caffe model to Tensorflow The Caffe Model Zoo is an extraordinary place where reasearcher share their models. Caffe is an awesome framework, but you might want to use Tensorflow instead. In this blog post, I&rsquo;ll show you how to convert the Places 365 model to Tensorflow.
-Using Caffe-Tensorflow to convert your model Your best bet is to use the awesome caffe-tensorflow. This project takes a prototxt file as an input and converts it to a python file so you can use the model with Tensorflow."/>
-<meta name="twitter:site" content="@https://www.twitter.com/eliotandres"/>
-
-
-    </head>
-<body>
-    <nav class="main-nav">
-	
-		<a href='http://ndres.me'><span class="arrow">←</span> While the models are training</a>
-	
-
-	
-
-
-	
-		<a class="cta" href="http://ndres.me/index.xml">Subscribe</a>
-	
-</nav>
-
-    <section id="wrapper">
-        
-        
-<article class="post">
-    <header>
-        <h1>Converting a Caffe model to Tensorflow</h1>
-        <h2 class="headline">
-        June 7, 2017
-        <br>
-        
-        </h2>
-    </header>
-    <section id="post-body">
-        
+      <div class="post">
+      <h1>Converting a Caffe model to Tensorflow</h1>
+      <span class="post-date">Wed, Jun 7, 2017</span>
+      
 
 <h2 id="converting-a-caffe-model-to-tensorflow">Converting a Caffe model to Tensorflow</h2>
 
-<p>The <a href="https://github.com/BVLC/caffe/wiki/Model-Zoo">Caffe Model Zoo</a> is an extraordinary place where reasearcher share their models. Caffe is an awesome framework, but you might want to use Tensorflow instead. In this blog post, I&rsquo;ll show you how to convert the <a href="https://github.com/metalbubble/places365">Places 365 model</a> to Tensorflow.</p>
+<p>The <a href="https://github.com/BVLC/caffe/wiki/Model-Zoo" target="_blank">Caffe Model Zoo</a> is an extraordinary place where reasearcher share their models. Caffe is an awesome framework, but you might want to use Tensorflow instead. In this blog post, I&rsquo;ll show you how to convert the <a href="https://github.com/metalbubble/places365" target="_blank">Places 365 model</a> to Tensorflow.</p>
 
 <h2 id="using-caffe-tensorflow-to-convert-your-model">Using Caffe-Tensorflow to convert your model</h2>
 
-<p>Your best bet is to use the awesome <a href="https://github.com/ethereon/caffe-tensorflow">caffe-tensorflow</a>. This project takes a <code>prototxt</code> file as an input and converts it to a python file so you can use the model with Tensorflow. I had to use <a href="https://github.com/ethereon/caffe-tensorflow/pull/76">this pull request</a> to get a standalone model. I forked the repo with a <a href="https://github.com/ethereon/caffe-tensorflow/pull/105/files#diff-e9719ee0bc9dcdda8d08a09378a691b1R17">few</a> <a href="https://github.com/linkfluence/caffe-tensorflow/commit/4068ea31a1ff7dc91cd429e091e61b039448ce1b">other</a> tweaks as well.</p>
+<p>Your best bet is to use the awesome <a href="https://github.com/ethereon/caffe-tensorflow" target="_blank">caffe-tensorflow</a>. This project takes a <code>prototxt</code> file as an input and converts it to a python file so you can use the model with Tensorflow. I had to use <a href="https://github.com/ethereon/caffe-tensorflow/pull/76" target="_blank">this pull request</a> to get a standalone model. I forked the repo with a <a href="https://github.com/ethereon/caffe-tensorflow/pull/105/files#diff-e9719ee0bc9dcdda8d08a09378a691b1R17" target="_blank">few</a> <a href="https://github.com/linkfluence/caffe-tensorflow/commit/4068ea31a1ff7dc91cd429e091e61b039448ce1b" target="_blank">other</a> tweaks as well.</p>
 
 <h3 id="1-install-caffe-tensorflow">1 - Install caffe-tensorflow</h3>
 
@@ -170,7 +114,7 @@ with tf.Session(graph=graph) as sess:
     y_out = sess.run(y, feed_dict={ x: batch })
 </code></pre>
 
-<p><em>(the handy function comes from <a href="https://blog.metaflow.fr/tensorflow-how-to-freeze-a-model-and-serve-it-with-a-python-api-d4f3596b3adc">this blog post</a>)</em></p>
+<p><em>(the handy function comes from <a href="https://blog.metaflow.fr/tensorflow-how-to-freeze-a-model-and-serve-it-with-a-python-api-d4f3596b3adc" target="_blank">this blog post</a>)</em></p>
 
 <p>Note: You&rsquo;ll see that we&rsquo;re building a batch of 10 images&hellip; with only one image. This is because the network is set like this and I want to keep this article simple. It should be possible to change the batch size. We&rsquo;ll see this in an upcoming blog post</p>
 
@@ -180,7 +124,7 @@ with tf.Session(graph=graph) as sess:
 
 <h2 id="bonus-what-if-the-model-is-based-on-a-custom-version-of-caffe">Bonus: What if the model is based on a custom version of Caffe</h2>
 
-<p>It can happen that researchers need custom layers: they usually fork caffe. In this case, <a href="https://gist.github.com/FranciscoCanas/844aab52fcff6b1c652a">this gist</a> describes the steps to extract the weights and <a href="https://github.com/machrisaa/tensorflow-vgg/blob/master/vgg16.py#L20">this piece of code</a> should give you some hints on how to load them into your Tensorflow graph.</p>
+<p>It can happen that researchers need custom layers: they usually fork caffe. In this case, <a href="https://gist.github.com/FranciscoCanas/844aab52fcff6b1c652a" target="_blank">this gist</a> describes the steps to extract the weights and <a href="https://github.com/machrisaa/tensorflow-vgg/blob/master/vgg16.py#L20" target="_blank">this piece of code</a> should give you some hints on how to load them into your Tensorflow graph.</p>
 
 <p>For complex layers, there are some small differences between Caffe and Tensorflow: you will have to look at the source code. For instance, LSTM gates are not concatenated in the same order in Tensorflow and in Caffe.</p>
 
@@ -194,88 +138,31 @@ with tf.Session(graph=graph) as sess:
 <li>Increment N and repeat</li>
 </ul>
 
-<p>I was able to get a 10<sup>a</sup>^-3 mean difference in the final output when transfering a convnet and a 10^-2 mean difference after a bi-LSTM. Not too bad !</p>
+<p>I was able to get a 10<sup>-3</sup> mean difference in the final output when transfering a convnet and a 10<sup>-2</sup> mean difference after a bi-LSTM. Not too bad !</p>
 
-    </section>
-</article>
-
-<footer id="post-meta" class="clearfix">
-    
-    <img class="avatar" src="http://ndres.me/images/avatar.png">
-    <div>
-        <span class="dark">Eliot Andres blog</span>
-        <span>Deep Learning Engineer at Linkfluence</span>
     </div>
-    
-    <section id="sharing">
-        <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fndres.me%2fpost%2fconvert-caffe-to-tensorflow%2f - Converting%20a%20Caffe%20model%20to%20Tensorflow "><span class="icon-twitter"> tweet</span></a>
 
-<a class="facebook" href="#" onclick="
-    window.open(
-      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-      'facebook-share-dialog',
-      'width=626,height=436');
-    return false;"><span class="icon-facebook-rect"> Share</span>
-</a>
-
-    </section>
-</footer>
-
-
-
-<ul id="post-list" class="archive readmore">
-    <h3>Read more</h3>
-
-    
-    
-    
-        <li>
-            <a href="/post/faster-inference-tensorflow/">Faster inference in Tensorflow using XLA.<aside class="dates">May 8 2017</aside></a>
-        </li>
-    
-        <li>
-            <a href="/post/jupyter-notebook-rest-api/">Turn any Jupyter notebook into a RESTful Api<aside class="dates">May 7 2017</aside></a>
-        </li>
-    
-</ul>
+			
+		</div>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://ndres.me">
+        <img class="sidebar-avatar-image" class="2x" src="http://ndres.me/images/avatar.jpg"/>
+      </a>
+      <h1><a href="http://ndres.me">Eliot Andres</a>&nbsp;
+        <a href="https://twitter.com/eliotandres"
+           class="twitter-follow-button"
+           data-show-count="false"
+           data-show-screen-name="false"></a></h1>
+      <p class="sidebar-bio">I am a freelance deep learning engineer with a focus on porting models from prototypes to production. I have a thing for Tensorflow and computer vision. <a href="/about/">More</a></p>
+    </div>
 
 
-
-        <footer id="footer">
-    
-        <div id="social">
-
-	
-	
-    
-    <a class="symbol" href="https://www.github.com/eliotandres">
-        circlegithubalt
-    </a>
-    
-    <a class="symbol" href="https://www.twitter.com/eliotandres">
-        circletwitterbird
-    </a>
-    
-
-
+  </div>
+  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <p class="sidebar-copyright">While the models are training: a deep learning blog</p>
 </div>
-
-    
-    <p class="small">
-    
-        While the models are training: a deep learning blog
-    
-    </p>
-</footer>
-
-    </section>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="http://ndres.me/js/main.js"></script>
-<script src="http://ndres.me/js/highlight.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-
 
 
 </body>

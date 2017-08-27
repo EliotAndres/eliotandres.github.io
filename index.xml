@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>While the models are training: a deep learning blog</copyright>
-    <lastBuildDate>Wed, 07 Jun 2017 23:02:15 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 27 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://ndres.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About Me</title>
+      <link>http://ndres.me/about/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://ndres.me/about/</guid>
+      <description>About I am a freelance deep learning engineer based in Paris with a focus on porting models from prototypes to production. I am currently available for you consulting projects.
+Some (mostly useless) side projects  So You Like That Song: Music recommendation based on Soundcloud playlists Punchline Machine: Rap punchline generator using Markov Chains Gif Mask: Add you face on gifs Kaggle Past Solutions: A sortable and searchable compilation of solutions to past Kaggle competitions.</description>
+    </item>
     
     <item>
       <title>Converting a Caffe model to Tensorflow</title>
@@ -34,7 +44,7 @@ What is XLA During the tensorflow summit 2017, the Tensorflow team introduced XL
     </item>
     
     <item>
-      <title>Turn any Jupyter notebook into a RESTful Api</title>
+      <title>Turn any Jupyter notebook into a REST API</title>
       <link>http://ndres.me/post/jupyter-notebook-rest-api/</link>
       <pubDate>Sun, 07 May 2017 16:25:35 +0200</pubDate>
       
