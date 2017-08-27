@@ -1,107 +1,70 @@
 /*
-  IR_Black style (c) Vasily Mikhailitchenko <vaskas@programica.ru>
+
+Colorbrewer theme
+Original: https://github.com/mbostock/colorbrewer-theme (c) Mike Bostock <mike@ocks.org>
+Ported by Fabrício Tavares de Oliveira
+
 */
 
 .hljs {
   display: block;
   overflow-x: auto;
-  /*padding: 0.5em;*/
-  background: #272b2d;
-  color: #d0d0d0;
-  -webkit-text-size-adjust: none;
+  padding: 0.5em;
 }
 
-.hljs-shebang,
-.hljs-comment {
-  color: #777279;
-}
-
-.hljs-keyword,
-.hljs-tag,
-.tex .hljs-command,
-.hljs-request,
-.hljs-status,
-.clojure .hljs-attribute {
-  color: #ebde68;
-}
-
-.hljs-sub .hljs-keyword,
-.method,
-.hljs-list .hljs-title,
-.nginx .hljs-title {
-  color: #ffffb6;
+.hljs,
+.hljs-subst {
+  color: #000;
 }
 
 .hljs-string,
-.hljs-tag .hljs-value,
-.hljs-cdata,
-.hljs-filter .hljs-argument,
-.hljs-attr_selector,
-.apache .hljs-cbracket,
-.hljs-date,
-.coffeescript .hljs-attribute {
-  color: #c1ef65;
-}
-
-.hljs-subst {
-  color: #daefa3;
-}
-
-.hljs-regexp {
-  color: #e9c062;
-}
-
-.hljs-title,
-.hljs-sub .hljs-identifier,
-.hljs-pi,
-.hljs-decorator,
-.tex .hljs-special,
-.hljs-type,
-.hljs-constant,
-.smalltalk .hljs-class,
-.hljs-doctag,
-.nginx .hljs-built_in {
-  color: #c1ef65;
-}
-
+.hljs-meta,
 .hljs-symbol,
-.ruby .hljs-symbol .hljs-string,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-addition {
+  color: #756bb1;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #636363;
+}
+
 .hljs-number,
-.hljs-variable,
-.vbscript,
+.hljs-regexp,
 .hljs-literal,
-.hljs-name {
-  color: #77bcd7;
+.hljs-bullet,
+.hljs-link {
+  color: #31a354;
 }
 
-.css .hljs-tag {
-  color: #96cbfe;
+.hljs-deletion,
+.hljs-variable {
+  color: #88f;
 }
 
-.css .hljs-rule .hljs-property,
-.css .hljs-id {
-  color: #ffffb6;
+
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-title,
+.hljs-section,
+.hljs-built_in,
+.hljs-doctag,
+.hljs-type,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-strong {
+  color: #3182bd;
 }
 
-.css .hljs-class {
-  color: #fff;
+.hljs-emphasis {
+  font-style: italic;
 }
 
-.hljs-hexcolor {
-  color: #c6c5fe;
+.hljs-attribute {
+  color: #e6550d;
 }
-
-.hljs-number {
-  color:#77bcd7;
-}
-
-.coffeescript .javascript,
-.javascript .xml,
-.tex .hljs-formula,
-.xml .javascript,
-.xml .vbscript,
-.xml .css,
-.xml .hljs-cdata {
-  opacity: 0.7;
-}
-
