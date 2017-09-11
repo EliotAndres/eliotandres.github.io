@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>While the models are training: a deep learning blog</copyright>
-    <lastBuildDate>Tue, 29 Aug 2017 14:57:02 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 07 Jun 2017 23:02:15 +0200</lastBuildDate>
     
 	<atom:link href="http://ndres.me/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Markov chains for Text Generation</title>
-      <link>http://ndres.me/post/startup-idea-markov/</link>
-      <pubDate>Tue, 29 Aug 2017 14:57:02 +0200</pubDate>
-      
-      <guid>http://ndres.me/post/startup-idea-markov/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Converting a Caffe model to Tensorflow</title>
