@@ -2,44 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://ndres.me/about/</loc>
+    <loc>https://ndres.me/about/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ndres.me/post/convert-caffe-to-tensorflow/</loc>
+    <loc>https://ndres.me/post/convert-caffe-to-tensorflow/</loc>
     <lastmod>2017-06-07T23:02:15+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ndres.me/post/faster-inference-tensorflow/</loc>
+    <loc>https://ndres.me/post/faster-inference-tensorflow/</loc>
     <lastmod>2017-05-08T14:52:12+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ndres.me/post/jupyter-notebook-rest-api/</loc>
+    <loc>https://ndres.me/post/jupyter-notebook-rest-api/</loc>
     <lastmod>2017-05-07T16:25:35+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ndres.me/categories/</loc>
+    <loc>https://ndres.me/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ndres.me/</loc>
+    <loc>https://ndres.me/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ndres.me/post/</loc>
+    <loc>https://ndres.me/post/</loc>
     <lastmod>2017-06-07T23:02:15+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ndres.me/tags/</loc>
+    <loc>https://ndres.me/tags/</loc>
     <priority>0</priority>
   </url>
   
