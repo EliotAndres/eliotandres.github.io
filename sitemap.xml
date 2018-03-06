@@ -32,31 +32,7 @@
   </url>
   
   <url>
-    <loc>https://ndres.me/tags/development/</loc>
-    <lastmod>2018-03-06T11:48:17+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ndres.me/categories/development/</loc>
-    <lastmod>2018-03-06T11:48:17+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://ndres.me/</loc>
-    <lastmod>2018-03-06T11:48:17+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ndres.me/tags/golang/</loc>
-    <lastmod>2018-03-06T11:48:17+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ndres.me/categories/golang/</loc>
     <lastmod>2018-03-06T11:48:17+01:00</lastmod>
     <priority>0</priority>
   </url>
@@ -69,7 +45,6 @@
   
   <url>
     <loc>https://ndres.me/tags/</loc>
-    <lastmod>2018-03-06T11:48:17+01:00</lastmod>
     <priority>0</priority>
   </url>
   
