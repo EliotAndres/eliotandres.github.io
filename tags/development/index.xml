@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on Eliot Andres blog</title>
+    <link>https://ndres.me/tags/development/</link>
+    <description>Recent content in Development on Eliot Andres blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>While the models are training: a machine learning blog</copyright>
+    <lastBuildDate>Tue, 06 Mar 2018 11:48:17 +0100</lastBuildDate>
+    
+	<atom:link href="https://ndres.me/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Top 5 Best Jupyter Notebook Extensions</title>
+      <link>https://ndres.me/post/best-jupyter-notebook-extensions/</link>
+      <pubDate>Tue, 06 Mar 2018 11:48:17 +0100</pubDate>
+      
+      <guid>https://ndres.me/post/best-jupyter-notebook-extensions/</guid>
+      <description>Notebook extensions are plug-ins that you can easily add to your Jupyter notebooks. The best way to install them is to use Jupyter NbExtensions Configurator. It will add a tab to let you enable/disable extensions:
+  Screenshot of NbExtensions Configurator   Installation Installation with conda:
+conda install -c conda-forge jupyter_contrib_nbextensions conda install -c conda-forge jupyter_nbextensions_configurator  Or with pip:
+pip install jupyter_nbextensions_configurator jupyter_contrib_nbextensions jupyter contrib nbextension install --user jupyter nbextensions_configurator enable --user  Find more info about installation here</description>
+    </item>
+    
+  </channel>
+</rss>

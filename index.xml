@@ -6,11 +6,23 @@
     <description>Recent content on Eliot Andres blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>While the models are training: a deep learning blog</copyright>
-    <lastBuildDate>Sun, 27 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <copyright>While the models are training: a machine learning blog</copyright>
+    <lastBuildDate>Tue, 06 Mar 2018 11:48:17 +0100</lastBuildDate>
     
 	<atom:link href="https://ndres.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Top 5 Best Jupyter Notebook Extensions</title>
+      <link>https://ndres.me/post/best-jupyter-notebook-extensions/</link>
+      <pubDate>Tue, 06 Mar 2018 11:48:17 +0100</pubDate>
+      
+      <guid>https://ndres.me/post/best-jupyter-notebook-extensions/</guid>
+      <description>Notebook extensions are plug-ins that you can easily add to your Jupyter notebooks. The best way to install them is to use Jupyter NbExtensions Configurator. It will add a tab to let you enable/disable extensions:
+  Screenshot of NbExtensions Configurator   Installation Installation with conda:
+conda install -c conda-forge jupyter_contrib_nbextensions conda install -c conda-forge jupyter_nbextensions_configurator  Or with pip:
+pip install jupyter_nbextensions_configurator jupyter_contrib_nbextensions jupyter contrib nbextension install --user jupyter nbextensions_configurator enable --user  Find more info about installation here</description>
+    </item>
     
     <item>
       <title>About Me</title>
@@ -18,7 +30,7 @@
       <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ndres.me/about/</guid>
-      <description>About I am a freelance machine learning engineer with a focus on porting models from prototypes to production. I am currently available for your consulting projects.
+      <description>About I am a freelance machine learning engineer with a focus on porting models from prototypes to production. I am sometimes available for your consulting projects.
 Some of my side projects  Kaggle Past Solutions: A sortable and searchable compilation of solutions to past Kaggle competitions. pretrained.ml: A sortable and searchable compilation of solutions to past Kaggle competitions. Hopsell: Shopify plug-in  Contact You can reach me on Twitter, Linkedin, GitHub</description>
     </item>
     

@@ -6,10 +6,28 @@
     <description>Recent content in Categories on Eliot Andres blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>While the models are training: a deep learning blog</copyright>
+    <copyright>While the models are training: a machine learning blog</copyright>
     
 	<atom:link href="https://ndres.me/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Development</title>
+      <link>https://ndres.me/categories/development/</link>
+      <pubDate>Tue, 06 Mar 2018 11:48:17 +0100</pubDate>
+      
+      <guid>https://ndres.me/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://ndres.me/categories/golang/</link>
+      <pubDate>Tue, 06 Mar 2018 11:48:17 +0100</pubDate>
+      
+      <guid>https://ndres.me/categories/golang/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
