@@ -6,11 +6,21 @@
     <description>Recent content on Eliot Andres blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>While the models are training: a machine learning blog</copyright>
-    <lastBuildDate>Tue, 06 Mar 2018 11:48:17 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 23 Apr 2018 11:02:15 +0200</lastBuildDate>
     
 	<atom:link href="https://ndres.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using Facebook data to plot my friend network</title>
+      <link>https://ndres.me/post/facebook-graph-network/</link>
+      <pubDate>Mon, 23 Apr 2018 11:02:15 +0200</pubDate>
+      
+      <guid>https://ndres.me/post/facebook-graph-network/</guid>
+      <description>Inspired by a friend&amp;rsquo;s post, I decided to plot my Facebook network. To do so, I scrapped &amp;ldquo;mutual friends&amp;rdquo; and made the following graph:
+    Facebook friend network (click to enlarge)   In this blog post, I&amp;rsquo;ll explain how the graph is made and how clusters are created. In a following blog post, I&amp;rsquo;ll explain how to make it yourself.
+A few comments on the graph In this graph, each friend is represented by a node.</description>
+    </item>
     
     <item>
       <title>Top 5 Best Jupyter Notebook Extensions</title>
@@ -19,7 +29,7 @@
       
       <guid>https://ndres.me/post/best-jupyter-notebook-extensions/</guid>
       <description>Notebook extensions are plug-ins that you can easily add to your Jupyter notebooks. The best way to install them is to use Jupyter NbExtensions Configurator. It will add a tab to let you enable/disable extensions:
-  Screenshot of NbExtensions Configurator   Installation Installation with conda:
+   Screenshot of NbExtensions Configurator   Installation Installation with conda:
 conda install -c conda-forge jupyter_contrib_nbextensions conda install -c conda-forge jupyter_nbextensions_configurator  Or with pip:
 pip install jupyter_nbextensions_configurator jupyter_contrib_nbextensions jupyter contrib nbextension install --user jupyter nbextensions_configurator enable --user  Find more info about installation here</description>
     </item>

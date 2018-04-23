@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.37.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>Using Facebook data to plot my friend network &middot; Eliot Andres blog</title>
+  
+
+  
+  <link rel="stylesheet" href="https://ndres.me/css/print.css" media="print">
+  <link rel="stylesheet" href="https://ndres.me/css/poole.css">
+  <link rel="stylesheet" href="https://ndres.me/css/syntax.css">
+  <link rel="stylesheet" href="https://ndres.me/css/hyde.css">
+  <link rel="stylesheet" href="https://ndres.me/css/highlight.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ndres.me/images/favicon.png">
+  <link rel="shortcut icon" href="https://ndres.me/images/favicon.png">
+
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Eliot Andres blog" />
+
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-105312541-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+</head>
+
+<body class=" ">
+
+  <div class="content container">
+      <div class="main-nav">
+    <a href="/">Home</a>
+    |
+    <a href="/about/">About</a>
+</div>
+
+
+      <div class="post">
+      <h1>Using Facebook data to plot my friend network</h1>
+      <span class="post-date">Mon, Apr 23, 2018</span>
+      
+
+<p>Inspired by a friend&rsquo;s  post, I decided to plot my Facebook network. To do so, I scrapped &ldquo;mutual friends&rdquo; and made the following graph:</p>
+
+
+<figure>
+    <a href="/images/facebook-graph.jpg" target="_blank">
+        <img src="/images/facebook-graph.jpg" alt="Facebook friend network (click to enlarge)" />
+    </a>
+    
+    <figcaption>
+        <p>
+        Facebook friend network (click to enlarge)
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p>In this blog post, I&rsquo;ll explain how the graph is made and how clusters are created. In a following blog post, I&rsquo;ll explain how to make it yourself.</p>
+
+<h1 id="a-few-comments-on-the-graph">A few comments on the graph</h1>
+
+<p>In this graph, each friend is represented by a node. Each edge represents a friendship.
+You&rsquo;ll see that clusters are roughly made of where I went to school or in holidays.
+One cluster is the group of people I&rsquo;m traveling with as part of my <a href="http://remoteyear.com/" target="_blank">Remote Year</a>.
+The node in the middle represents me.</p>
+
+<h1 id="how-it-was-made">How it was made</h1>
+
+<h3 id="1-scrapping-mutual-friends">1 - Scrapping mutual friends</h3>
+
+<p>Facebook does not let you access friends you have in common via any API, so I had to make a script to gather the relationships. I ended up with a list of edges (friend1 &lt;-&gt; friend2)</p>
+
+<h3 id="2-plotting-the-graph">2 - Plotting the graph</h3>
+
+<p>The position of the nodes is computed using the <a href="https://en.wikipedia.org/wiki/Force-directed_graph_drawing" target="_blank">Fruchterman-Reingold Algorithm</a>.
+It is a is a force-directed algorithm. The general idea is to represent each friendship by a spring. The consequences are:</p>
+
+<ul>
+<li>When you are part of a large group of people, the numerous springs will bring you closer to the group.</li>
+<li>If you are friend with 2 large groups, you&rsquo;ll appear in the middle of the 2 groups because of the opposing forces.</li>
+<li>If you are friend with only a few people, you&rsquo;ll appear on the outter border of the graph</li>
+</ul>
+
+<h3 id="3-clustering">3 - Clustering</h3>
+
+<p>You&rsquo;ll also notice that each group has a different color. Each color represents a community. To create those communities, I used the <a href="https://en.wikipedia.org/wiki/Louvain_Modularity" target="_blank">Louvain Method for community detection</a>. The method attempts to maximize <a href="https://en.wikipedia.org/wiki/Modularity_(networks)" target="_blank">modularity</a>. The general idea of modularity is to measure the number of connections between people of different communities.</p>
+
+<p>Therefore if the graph has a high modularity, it means that there are few edges connecting 2 nodes of different communities but numerous edges connecting 2 nodes of the same community.</p>
+
+<p>In the Louvain Method of community detection, small communities are found by optimizing modularity locally on all nodes. Then each small community is grouped into one larger community.</p>
+
+<p>You&rsquo;ll find an animation of the community merging below:</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/dGa-TXpoPz8?"
+  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
+</div>
+
+<p>Video credits to <a href="https://github.com/keithpjolley" target="_blank">Keith Jolley</a></p>
+
+<h1 id="make-it-yourself">Make it yourself</h1>
+
+<p>I&rsquo;m currently writting a tutorial on how to make it yourself. When it&rsquo;ll be ready, I&rsquo;ll update this blog post.</p>
+
+    </div>
+
+			
+		</div>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://ndres.me/">
+        <img class="sidebar-avatar-image" class="2x" src="https://ndres.me/images/avatar.jpg"/>
+      </a>
+      <h1><a href="https://ndres.me/">Eliot Andres</a>&nbsp;
+        <a href="https://twitter.com/eliotandres"
+           class="twitter-follow-button"
+           data-show-count="false"
+           data-show-screen-name="false"></a></h1>
+      <p class="sidebar-bio">I am a freelance machine learning engineer with a focus on porting models from prototypes to production. I have a thing for Tensorflow and computer vision. <a href="/about/">More</a></p>
+    </div>
+
+
+  </div>
+  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <p class="sidebar-copyright">While the models are training: a machine learning blog</p>
+</div>
+
+
+<script src="https://ndres.me/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

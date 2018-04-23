@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://ndres.me/post/facebook-graph-network/</loc>
+    <lastmod>2018-04-23T11:02:15+02:00</lastmod>
+  </url>
   
   <url>
     <loc>https://ndres.me/post/best-jupyter-notebook-extensions/</loc>
@@ -33,13 +39,13 @@
   
   <url>
     <loc>https://ndres.me/</loc>
-    <lastmod>2018-03-06T11:48:17+01:00</lastmod>
+    <lastmod>2018-04-23T11:02:15+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ndres.me/post/</loc>
-    <lastmod>2018-03-06T11:48:17+01:00</lastmod>
+    <lastmod>2018-04-23T11:02:15+02:00</lastmod>
     <priority>0</priority>
   </url>
   
