@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.37.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>Tutorial: Plotting your Facebook friend network using NetworkX and python-louvain &middot; Eliot Andres blog</title>
+  
+
+  
+  <link rel="stylesheet" href="https://ndres.me/css/print.css" media="print">
+  <link rel="stylesheet" href="https://ndres.me/css/poole.css">
+  <link rel="stylesheet" href="https://ndres.me/css/syntax.css">
+  <link rel="stylesheet" href="https://ndres.me/css/hyde.css">
+  <link rel="stylesheet" href="https://ndres.me/css/highlight.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ndres.me/images/favicon.png">
+  <link rel="shortcut icon" href="https://ndres.me/images/favicon.png">
+
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Eliot Andres blog" />
+
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-105312541-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+</head>
+
+<body class=" ">
+
+  <div class="content container">
+      <div class="main-nav">
+    <a href="/">Home</a>
+    |
+    <a href="/about/">About</a>
+</div>
+
+
+      <div class="post">
+      <h1>Tutorial: Plotting your Facebook friend network using NetworkX and python-louvain</h1>
+      <span class="post-date">Mon, Apr 30, 2018</span>
+      
+
+<p>Last week I published <a href="/post/facebook-graph-network/">an article</a> showing you how I built a friend graph using you Facebook data.</p>
+
+<p>This article is a detailed version showing you how to do it yourself. Here&rsquo;s what we&rsquo;ll end up with:</p>
+
+
+<figure>
+    <a href="/images/facebook-graph.jpg" target="_blank">
+        <img src="/images/facebook-graph.jpg" alt="Facebook friend network (click to enlarge)" />
+    </a>
+    
+    <figcaption>
+        <p>
+        Facebook friend network (click to enlarge)
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p><strong>Warning</strong>: To make such a graph, you need to scape all your mutual friends. Scraping is automated but can take a few hours.</p>
+
+<p>Let&rsquo;s get started !</p>
+
+<h2 id="scrapping-the-data">Scrapping the data</h2>
+
+<p>Facebook does not let you access friends you have in common via any API, so we&rsquo;ll have to scrappe the data.</p>
+
+<p>Clone the repo, and install requirements:</p>
+
+<pre><code>git clone https://github.com/EliotAndres/facebook-friend-graph
+cd facebook-friend-graph
+pip install -r requirements.txt
+</code></pre>
+
+<p>The scrapping script will open a Chrome window and go to each of your friends profile. It&rsquo;ll then read the DOM to save your mutual friends.</p>
+
+<p>It&rsquo;s using the Chrome drive, so you must also <a href="https://sites.google.com/a/chromium.org/chromedriver/" target="_blank">install it</a>. Once done, you can run:</p>
+
+<pre><code>python facebookFOF.py
+</code></pre>
+
+<p>The script will prompt you for your username/password. You&rsquo;ll see a progress bar. It will periodically save the graph. So if it fails, you can just restart it and it&rsquo;ll start where it stopped.
+It can take up to a few hours depending on your connection.</p>
+
+<p>You&rsquo;ll end up with a .pickle file containing you friend graph information. Now let&rsquo;s plot this data !</p>
+
+<h2 id="building-the-graph">Building the graph</h2>
+
+<script src="https://gist.github.com/EliotAndres/10d87567a2f81209f4c9be62c421a5df.js"></script>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The graph should be made of differentiated clusters. You can hover over the clusters to see your friends names.
+ You can also play with the parameters and the colors to make it suit your needs. <strong>If you encounter any problem, open an issue on Github.</strong></p>
+
+    </div>
+
+			
+		</div>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://ndres.me/">
+        <img class="sidebar-avatar-image" class="2x" src="https://ndres.me/images/avatar.jpg"/>
+      </a>
+      <h1><a href="https://ndres.me/">Eliot Andres</a>&nbsp;
+        <a href="https://twitter.com/eliotandres"
+           class="twitter-follow-button"
+           data-show-count="false"
+           data-show-screen-name="false"></a></h1>
+      <p class="sidebar-bio">I am a freelance machine learning engineer with a focus on porting models from prototypes to production. I have a thing for Tensorflow and computer vision. <a href="/about/">More</a></p>
+    </div>
+
+
+  </div>
+  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <p class="sidebar-copyright">While the models are training: a machine learning blog</p>
+</div>
+
+
+<script src="https://ndres.me/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
