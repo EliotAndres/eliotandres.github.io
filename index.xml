@@ -6,10 +6,22 @@
     <description>Recent content on Eliot Andres blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Apr 2018 16:13:15 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 07 May 2018 20:50:22 +0100</lastBuildDate>
     
 	<atom:link href="https://ndres.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using a neural network to generate your next startup name</title>
+      <link>https://ndres.me/post/using-neural-network-generate-startup-name/</link>
+      <pubDate>Mon, 07 May 2018 20:50:22 +0100</pubDate>
+      
+      <guid>https://ndres.me/post/using-neural-network-generate-startup-name/</guid>
+      <description>Inspired by a Dan Hon article on how to generate British placenames, I decided to train my own network to generate startup names.
+The original code was made by Andej Karpathy, but there is a more modern and concise version in Keras, available here.
+The results Here are a few of my favorites:
+ Cuyation SaleBott Airr Energy Costapi Excel Worldeh Hight Biotherapeutics Joyai YouLab Rygo Inc. Lifester Mobilivy Airmo bitran OpenFactor  You can find a longer list here.</description>
+    </item>
     
     <item>
       <title>Tutorial: Plotting your Facebook friend network using NetworkX and python-louvain</title>

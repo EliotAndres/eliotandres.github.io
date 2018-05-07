@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.37.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>Using a neural network to generate your next startup name &middot; Eliot Andres blog</title>
+  
+
+  
+  <link rel="stylesheet" href="https://ndres.me/css/print.css" media="print">
+  <link rel="stylesheet" href="https://ndres.me/css/poole.css">
+  <link rel="stylesheet" href="https://ndres.me/css/syntax.css">
+  <link rel="stylesheet" href="https://ndres.me/css/hyde.css">
+  <link rel="stylesheet" href="https://ndres.me/css/highlight.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ndres.me/images/favicon.png">
+  <link rel="shortcut icon" href="https://ndres.me/images/favicon.png">
+
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Eliot Andres blog" />
+
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-105312541-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+</head>
+
+<body class=" ">
+
+  <div class="content container">
+      <div class="main-nav">
+    <a href="/">Home</a>
+    |
+    <a href="/about/">About</a>
+</div>
+
+
+      <div class="post">
+      <h1>Using a neural network to generate your next startup name</h1>
+      <span class="post-date">Mon, May 7, 2018</span>
+      
+
+<p>Inspired by a <a href="https://medium.com/@hondanhon/i-trained-a-neural-net-to-generate-british-placenames-9460e907e4e9" target="_blank">Dan Hon article</a> on how to generate British placenames, I decided to train my own network to generate startup names.</p>
+
+<p>The <a href="https://github.com/karpathy/char-rnn" target="_blank">original code</a> was made by Andej Karpathy, but there is a more modern and concise version in Keras, <a href="https://github.com/keras-team/keras/blob/master/examples/lstm_text_generation.py" target="_blank">available here</a>.</p>
+
+<h1 id="the-results">The results</h1>
+
+<p>Here are a few of my favorites:</p>
+
+<ul>
+<li>Cuyation</li>
+<li>SaleBott</li>
+<li>Airr Energy</li>
+<li>Costapi</li>
+<li>Excel Worldeh</li>
+<li>Hight Biotherapeutics</li>
+<li>Joyai</li>
+<li>YouLab</li>
+<li>Rygo Inc.</li>
+<li>Lifester</li>
+<li>Mobilivy</li>
+<li>Airmo</li>
+<li>bitran</li>
+<li>OpenFactor</li>
+</ul>
+
+<p>You can find a <a href="https://github.com/EliotAndres/char-rnn-tensorflow-js/blob/master/generated.txt" target="_blank">longer list here</a>.</p>
+
+<p><strong>Note</strong>: you can&rsquo;t prevent the neural net from generating startup names that already exist. So if you were planing on using any of those, do your own research first.</p>
+
+<h1 id="how-it-works">How it works</h1>
+
+<p>I trained the neural network on 170k startup names. To generate a startup name, you start with 10 random characters as a seed, feed it to the network (a <a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank">LSTM</a>) and ask it to predict the next character.</p>
+
+<p>You then append the predicted character to the seed, remove the first character (so its length is still 10) and repeat.</p>
+
+<p>If we start with this seed: <code>Kdsdgasdgd</code>, for our last example it looks like this:</p>
+
+<ul>
+<li>model.predict(&lsquo;Kdsdgasdgd&rsquo;) -&gt; returns O</li>
+<li>model.predict(&lsquo;dsdgasdgdO&rsquo;) -&gt; returns p</li>
+<li>model.predict(&lsquo;sdgasdgdOp&rsquo;) -&gt; returns e</li>
+<li>model.predict(&lsquo;dgasdgdOpe&rsquo;) -&gt; returns n</li>
+<li>[&hellip;]</li>
+<li>model.predict(&lsquo;OpenFactor&rsquo;) -&gt; returns &lsquo;\n&rsquo; (new line, meaning it&rsquo;s the end of the word)</li>
+</ul>
+
+<p>In summary, we repeatedly call a recurrent neural network. Deepception <a href="https://www.youtube.com/watch?v=UXd0EDy7aTY" target="_blank">(see video)</a></p>
+
+<h1 id="the-code">The code</h1>
+
+<p>If you want to dig deeper, the full code and dataset is available in a <a href="https://github.com/EliotAndres/char-rnn-tensorflow-js/blob/master/python/char-rnn-tensorflow-js.ipynb" target="_blank">notebook here</a>.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>A few months ago, I made a startup pitch generator using Markov chains. You can find the <a href="http://ndres.me/markov-incubator/" target="_blank">demo here</a>. The 2 projects pair well together :-)</p>
+
+    </div>
+
+			
+		</div>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://ndres.me/">
+        <img class="sidebar-avatar-image" class="2x" src="https://ndres.me/images/avatar.jpg"/>
+      </a>
+      <h1><a href="https://ndres.me/">Eliot Andres</a>&nbsp;
+        <a href="https://twitter.com/eliotandres"
+           class="twitter-follow-button"
+           data-show-count="false"
+           data-show-screen-name="false"></a></h1>
+      <p class="sidebar-bio">I am a freelance machine learning engineer with a focus on porting models from prototypes to production. I have a thing for Tensorflow and computer vision. <a href="/about/">More</a></p>
+    </div>
+
+
+  </div>
+  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <p class="sidebar-copyright">While the models are training: a machine learning blog</p>
+</div>
+
+
+<script src="https://ndres.me/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
