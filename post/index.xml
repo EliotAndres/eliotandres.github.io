@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Eliot Andres blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 May 2018 20:50:22 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 14 May 2018 21:33:13 +0100</lastBuildDate>
     
 	<atom:link href="https://ndres.me/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to make animated gifs from Matplotlib plots easily</title>
+      <link>https://ndres.me/post/matplotlib-animated-gifs-easily/</link>
+      <pubDate>Mon, 14 May 2018 21:33:13 +0100</pubDate>
+      
+      <guid>https://ndres.me/post/matplotlib-animated-gifs-easily/</guid>
+      <description>The problem If you Google how to make an animated Matplotlib graph, you end up with code like that:
+fig, ax = plt.subplots() x = np.arange(0, 2*np.pi, 0.01) line, = ax.plot(x, np.sin(x)) def animate(i): line.set_ydata(np.sin(x + i/10.0)) # update the data return line, # Init only required for blitting to give a clean slate. def init(): line.set_ydata(np.ma.array(x, mask=True)) return line, ani = animation.FuncAnimation(fig, animate, np.arange(1, 200), init_func=init, interval=25, blit=True)  The logic of using an init function and methods such as set_ydata is a bit too complex for my taste, so I ended up using a different approach</description>
+    </item>
     
     <item>
       <title>Using a neural network to generate your next startup name</title>

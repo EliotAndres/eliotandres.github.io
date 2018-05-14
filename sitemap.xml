@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ndres.me/post/matplotlib-animated-gifs-easily/</loc>
+    <lastmod>2018-05-14T21:33:13+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ndres.me/post/using-neural-network-generate-startup-name/</loc>
     <lastmod>2018-05-07T20:50:22+01:00</lastmod>
   </url>
@@ -49,13 +54,13 @@
   
   <url>
     <loc>https://ndres.me/</loc>
-    <lastmod>2018-05-07T20:50:22+01:00</lastmod>
+    <lastmod>2018-05-14T21:33:13+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ndres.me/post/</loc>
-    <lastmod>2018-05-07T20:50:22+01:00</lastmod>
+    <lastmod>2018-05-14T21:33:13+01:00</lastmod>
     <priority>0</priority>
   </url>
   

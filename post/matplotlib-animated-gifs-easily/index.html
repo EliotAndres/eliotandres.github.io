@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.37.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>How to make animated gifs from Matplotlib plots easily &middot; Eliot Andres blog</title>
+  
+
+  
+  <link rel="stylesheet" href="https://ndres.me/css/print.css" media="print">
+  <link rel="stylesheet" href="https://ndres.me/css/poole.css">
+  <link rel="stylesheet" href="https://ndres.me/css/syntax.css">
+  <link rel="stylesheet" href="https://ndres.me/css/hyde.css">
+  <link rel="stylesheet" href="https://ndres.me/css/highlight.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ndres.me/images/favicon.png">
+  <link rel="shortcut icon" href="https://ndres.me/images/favicon.png">
+
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Eliot Andres blog" />
+
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-105312541-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+</head>
+
+<body class=" ">
+
+  <div class="content container">
+      <div class="main-nav">
+    <a href="/">Home</a>
+    |
+    <a href="/about/">About</a>
+</div>
+
+
+      <div class="post">
+      <h1>How to make animated gifs from Matplotlib plots easily</h1>
+      <span class="post-date">Mon, May 14, 2018</span>
+      
+
+<h2 id="the-problem">The problem</h2>
+
+<p>If you Google how to make an animated Matplotlib graph, you end up with code like that:</p>
+
+<pre><code>fig, ax = plt.subplots()
+
+x = np.arange(0, 2*np.pi, 0.01)
+line, = ax.plot(x, np.sin(x))
+
+def animate(i):
+    line.set_ydata(np.sin(x + i/10.0))  # update the data
+    return line,
+
+# Init only required for blitting to give a clean slate.
+def init():
+    line.set_ydata(np.ma.array(x, mask=True))
+    return line,
+
+ani = animation.FuncAnimation(fig, animate, np.arange(1, 200), init_func=init, interval=25, blit=True)
+</code></pre>
+
+<p>The logic of using an init function and methods such as <code>set_ydata</code> is a bit <strong>too complex</strong> for my taste, so I ended up using a different approach</p>
+
+<h2 id="the-simple-solution">The simple solution</h2>
+
+<p>The idea is to build an array of images and to convert it to a gif. To do so you need <a href="https://imageio.github.io/" target="_blank">Imageio</a>.</p>
+
+<pre><code>import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+import imageio
+
+def plot_for_offset(power, y_max):
+    # Data for plotting
+    t = np.arange(0.0, 100, 1)
+    s = t**power
+
+    fig, ax = plt.subplots(figsize=(10,5))
+    ax.plot(t, s)
+    ax.grid()
+    ax.set(xlabel='X', ylabel='x^{}'.format(power),
+           title='Powers of x')
+
+    # IMPORTANT ANIMATION CODE HERE
+    # Used to keep the limits constant
+    ax.set_ylim(0, y_max)
+
+    # Used to return the plot as an image rray
+    fig.canvas.draw()       # draw the canvas, cache the renderer
+    image = np.frombuffer(fig.canvas.tostring_rgb(), dtype='uint8')
+    image  = image.reshape(fig.canvas.get_width_height()[::-1] + (3,))
+
+    return image
+
+kwargs_write = {'fps':1.0, 'quantizer':'nq'}
+imageio.mimsave('./powers.gif', [plot_for_offset(i/4, 100) for i in range(10)], fps=1)
+</code></pre>
+
+<h2 id="result">Result</h2>
+
+
+<figure>
+    
+        <img src="/images/powers.gif" alt="Result of the code above" />
+    
+    
+    <figcaption>
+        <p>
+        Result of the code above
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+    </div>
+
+			
+		</div>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://ndres.me/">
+        <img class="sidebar-avatar-image" class="2x" src="https://ndres.me/images/avatar.jpg"/>
+      </a>
+      <h1><a href="https://ndres.me/">Eliot Andres</a>&nbsp;
+        <a href="https://twitter.com/eliotandres"
+           class="twitter-follow-button"
+           data-show-count="false"
+           data-show-screen-name="false"></a></h1>
+      <p class="sidebar-bio">I am a freelance machine learning engineer with a focus on porting models from prototypes to production. I have a thing for Tensorflow and computer vision. <a href="/about/">More</a></p>
+    </div>
+
+
+  </div>
+  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <p class="sidebar-copyright">While the models are training: a machine learning blog</p>
+</div>
+
+
+<script src="https://ndres.me/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
