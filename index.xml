@@ -6,10 +6,21 @@
     <description>Recent content on Eliot Andres blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 May 2018 21:33:13 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 29 May 2018 16:45:13 +0200</lastBuildDate>
     
 	<atom:link href="https://ndres.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Machine learning explained with gifs: style transfer</title>
+      <link>https://ndres.me/post/machine-learning-with-gifs-style-transfer/</link>
+      <pubDate>Tue, 29 May 2018 16:45:13 +0200</pubDate>
+      
+      <guid>https://ndres.me/post/machine-learning-with-gifs-style-transfer/</guid>
+      <description>About style transfer Pioneered in 2015, style transfer is a concept that uses transfers the style of a painting to an existing photography, using neural networks. The original paper is A Neural Algorithm of Artistic Style by Leon A. Gatys, Alexander S. Ecker, and Matthias Bethge.
+Here are a few examples taken from it:
+   Style transfer example from the original paper   How it works This gif is meant to give you a rough idea on how style transfer works in the orignal paper:     Style transfer explained with a gif (click to enlarge)   Although I tried to make the gif self-explanatory, here are a few more details:</description>
+    </item>
     
     <item>
       <title>How to make animated gifs from Matplotlib plots easily</title>
