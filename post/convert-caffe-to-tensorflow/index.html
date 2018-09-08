@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   
-  <title>Converting a Caffe model to Tensorflow &middot; Eliot Andres blog</title>
+  <title>Converting a Caffe model to TensorFlow &middot; Eliot Andres blog</title>
   
 
   
@@ -52,17 +52,17 @@ ga('send', 'pageview');
 
 
       <div class="post">
-      <h1>Converting a Caffe model to Tensorflow</h1>
+      <h1>Converting a Caffe model to TensorFlow</h1>
       <span class="post-date">Wed, Jun 7, 2017</span>
       
 
-<h2 id="converting-a-caffe-model-to-tensorflow">Converting a Caffe model to Tensorflow</h2>
+<h2 id="converting-a-caffe-model-to-tensorflow">Converting a Caffe model to TensorFlow</h2>
 
-<p>The <a href="https://github.com/BVLC/caffe/wiki/Model-Zoo" target="_blank">Caffe Model Zoo</a> is an extraordinary place where reasearcher share their models. Caffe is an awesome framework, but you might want to use Tensorflow instead. In this blog post, I&rsquo;ll show you how to convert the <a href="https://github.com/metalbubble/places365" target="_blank">Places 365 model</a> to Tensorflow.</p>
+<p>The <a href="https://github.com/BVLC/caffe/wiki/Model-Zoo" target="_blank">Caffe Model Zoo</a> is an extraordinary place where reasearcher share their models. Caffe is an awesome framework, but you might want to use TensorFlow instead. In this blog post, I&rsquo;ll show you how to convert the <a href="https://github.com/metalbubble/places365" target="_blank">Places 365 model</a> to TensorFlow.</p>
 
 <h2 id="using-caffe-tensorflow-to-convert-your-model">Using Caffe-Tensorflow to convert your model</h2>
 
-<p>Your best bet is to use the awesome <a href="https://github.com/ethereon/caffe-tensorflow" target="_blank">caffe-tensorflow</a>. This project takes a <code>prototxt</code> file as an input and converts it to a python file so you can use the model with Tensorflow. I had to use <a href="https://github.com/ethereon/caffe-tensorflow/pull/76" target="_blank">this pull request</a> to get a standalone model. I forked the repo with a <a href="https://github.com/ethereon/caffe-tensorflow/pull/105/files#diff-e9719ee0bc9dcdda8d08a09378a691b1R17" target="_blank">few</a> <a href="https://github.com/linkfluence/caffe-tensorflow/commit/4068ea31a1ff7dc91cd429e091e61b039448ce1b" target="_blank">other</a> tweaks as well.</p>
+<p>Your best bet is to use the awesome <a href="https://github.com/ethereon/caffe-tensorflow" target="_blank">caffe-tensorflow</a>. This project takes a <code>prototxt</code> file as an input and converts it to a python file so you can use the model with TensorFlow. I had to use <a href="https://github.com/ethereon/caffe-tensorflow/pull/76" target="_blank">this pull request</a> to get a standalone model. I forked the repo with a <a href="https://github.com/ethereon/caffe-tensorflow/pull/105/files#diff-e9719ee0bc9dcdda8d08a09378a691b1R17" target="_blank">few</a> <a href="https://github.com/linkfluence/caffe-tensorflow/commit/4068ea31a1ff7dc91cd429e091e61b039448ce1b" target="_blank">other</a> tweaks as well.</p>
 
 <h3 id="1-install-caffe-tensorflow">1 - Install caffe-tensorflow</h3>
 
@@ -70,7 +70,7 @@ ga('send', 'pageview');
 source activate Python27 # You need Python 2.7
 </code></pre>
 
-<h3 id="2-optional-switch-to-tensorflow-cpu">2 - (Optional) Switch to Tensorflow CPU</h3>
+<h3 id="2-optional-switch-to-tensorflow-cpu">2 - (Optional) Switch to TensorFlow CPU</h3>
 
 <p>You might bump into memory issues if you don&rsquo;t have enough memory. In this case just uninstall <code>tensorflow-gpu</code> and install <code>tensorflow</code></p>
 
@@ -79,7 +79,7 @@ source activate Python27 # You need Python 2.7
 <pre><code>python convert.py --caffemodel ./places/vgg16_hybrid1365.caffemodel ./places/deploy_vgg16_hybrid1365.prototxt --data-output-path ./output.mat --code-output-path ./output2.py --standalone-output-path ./standalonehybrid.pb`
 </code></pre>
 
-<h3 id="4-optional-re-install-tensorflow-gpu">4 - (Optional) Re-install Tensorflow GPU</h3>
+<h3 id="4-optional-re-install-tensorflow-gpu">4 - (Optional) Re-install TensorFlow GPU</h3>
 
 <h2 id="using-the-pb-file">Using the pb file</h2>
 
@@ -133,20 +133,20 @@ with tf.Session(graph=graph) as sess:
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>We&rsquo;ve seen how easy it is to use the models from the Caffe model zoo with Tensorflow. You are now able to classify cars, predict places, detect facial landmarks and so many magical things !</p>
+<p>We&rsquo;ve seen how easy it is to use the models from the Caffe model zoo with TensorFlow. You are now able to classify cars, predict places, detect facial landmarks and so many magical things !</p>
 
 <h2 id="bonus-what-if-the-model-is-based-on-a-custom-version-of-caffe">Bonus: What if the model is based on a custom version of Caffe</h2>
 
-<p>It can happen that researchers need custom layers: they usually fork caffe. In this case, <a href="https://gist.github.com/FranciscoCanas/844aab52fcff6b1c652a" target="_blank">this gist</a> describes the steps to extract the weights and <a href="https://github.com/machrisaa/tensorflow-vgg/blob/master/vgg16.py#L20" target="_blank">this piece of code</a> should give you some hints on how to load them into your Tensorflow graph.</p>
+<p>It can happen that researchers need custom layers: they usually fork caffe. In this case, <a href="https://gist.github.com/FranciscoCanas/844aab52fcff6b1c652a" target="_blank">this gist</a> describes the steps to extract the weights and <a href="https://github.com/machrisaa/tensorflow-vgg/blob/master/vgg16.py#L20" target="_blank">this piece of code</a> should give you some hints on how to load them into your TensorFlow graph.</p>
 
-<p>For complex layers, there are some small differences between Caffe and Tensorflow: you will have to look at the source code. For instance, LSTM gates are not concatenated in the same order in Tensorflow and in Caffe.</p>
+<p>For complex layers, there are some small differences between Caffe and TensorFlow: you will have to look at the source code. For instance, LSTM gates are not concatenated in the same order in TensorFlow and in Caffe.</p>
 
 <p>What worked best for me was to:</p>
 
 <ul>
 <li>Export Caffe&rsquo;s weights into an Numpy matrix</li>
 <li>Run a dummy example into the first N layers in Caffe, store the output</li>
-<li>Load the weights into your Tensorflow Graph, run the same example into the same first N layers but using Tensorflow this time</li>
+<li>Load the weights into your TensorFlow Graph, run the same example into the same first N layers but using TensorFlow this time</li>
 <li>Compare the output. If it&rsquo;s not matching, check what&rsquo;s wrong</li>
 <li>Increment N and repeat</li>
 </ul>
@@ -168,7 +168,7 @@ with tf.Session(graph=graph) as sess:
            class="twitter-follow-button"
            data-show-count="false"
            data-show-screen-name="false"></a></h1>
-      <p class="sidebar-bio">I am a freelance machine learning engineer with a focus on porting models from prototypes to production. I have a thing for Tensorflow and computer vision. <a href="/about/">More</a></p>
+      <p class="sidebar-bio">I am a freelance machine learning engineer with a focus on porting models from prototypes to production. I have a thing for TensorFlow and computer vision. <a href="/about/">More</a></p>
     </div>
 
 

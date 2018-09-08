@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   
-  <title>Faster inference in Tensorflow using XLA. &middot; Eliot Andres blog</title>
+  <title>Faster inference in TensorFlow using XLA. &middot; Eliot Andres blog</title>
   
 
   
@@ -52,7 +52,7 @@ ga('send', 'pageview');
 
 
       <div class="post">
-      <h1>Faster inference in Tensorflow using XLA.</h1>
+      <h1>Faster inference in TensorFlow using XLA.</h1>
       <span class="post-date">Mon, May 8, 2017</span>
       
 
@@ -64,7 +64,7 @@ ga('send', 'pageview');
 
 <h1 id="what-is-xla">What is XLA</h1>
 
-<p>During the tensorflow summit 2017, the Tensorflow team introduced <a href="https://www.tensorflow.org/performance/xla/" target="_blank">XLA</a> (Accelerated Linear Algebra). It is an experimental framework aiming at optimizing Tensorflow graphs.
+<p>During the TensorFlow summit 2017, the TensorFlow team introduced <a href="https://www.tensorflow.org/performance/xla/" target="_blank">XLA</a> (Accelerated Linear Algebra). It is an experimental framework aiming at optimizing TensorFlow graphs.
  It should be able to improve memory usage, model footprint, portability and more importantly, execution speed. Using XLA can lead to improvement of up to 80% !</p>
 
 <p>If you want to learn more about XLA, you should watch the summit&rsquo;s presentation
@@ -90,7 +90,7 @@ d = tmp * e
 
 <p>In this tutorial, I’ll show you how to use XLA.</p>
 
-<p><strong>Important</strong>: At the time of writing, you have to compile Tensorflow with a special flag in order benefit from XLA. <a href="https://www.tensorflow.org/install/install_sources" target="_blank">Building Tensorflow</a> is fairly straightforward and takes about one hour on a regular machine.</p>
+<p><strong>Important</strong>: At the time of writing, you have to compile TensorFlow with a special flag in order benefit from XLA. <a href="https://www.tensorflow.org/install/install_sources" target="_blank">Building TensorFlow</a> is fairly straightforward and takes about one hour on a regular machine.</p>
 
 <p>Once built, enabling XLA for your graph is very simple:</p>
 
@@ -109,7 +109,7 @@ sess = tf.Session(config=config)
 <h1 id="conclusion">Conclusion</h1>
 
 <p>I should underline that your mileage may vary, XLA is not a magic perfomance flag.
-But the Tensorflow team is constantly working on it so it is worth trying.</p>
+But the TensorFlow team is constantly working on it so it is worth trying.</p>
 
     </div>
 
@@ -126,7 +126,7 @@ But the Tensorflow team is constantly working on it so it is worth trying.</p>
            class="twitter-follow-button"
            data-show-count="false"
            data-show-screen-name="false"></a></h1>
-      <p class="sidebar-bio">I am a freelance machine learning engineer with a focus on porting models from prototypes to production. I have a thing for Tensorflow and computer vision. <a href="/about/">More</a></p>
+      <p class="sidebar-bio">I am a freelance machine learning engineer with a focus on porting models from prototypes to production. I have a thing for TensorFlow and computer vision. <a href="/about/">More</a></p>
     </div>
 
 
