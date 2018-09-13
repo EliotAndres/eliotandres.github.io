@@ -85,7 +85,8 @@ pip install jupyter_nbextensions_configurator jupyter_contrib_nbextensions jupyt
       
       <guid>https://ndres.me/about/</guid>
       <description>About I am a freelance machine learning engineer with a focus on porting models from prototypes to production. I may be available for your consulting projects.
-Some of my side projects  Kaggle Past Solutions: A sortable and searchable compilation of solutions to past Kaggle competitions. pretrained.ml: A sortable and searchable compilation of solutions to past Kaggle competitions. Instaposter: A side project to explore influencer marketing  Contact You can reach me on Twitter, Linkedin, GitHub</description>
+Talks I often talks at meetups. You can also find here the video of my conference talk Processing 100+ million images per month with deep learning
+Some of my side projects  Kaggle Past Solutions: A sortable and searchable compilation of solutions to past Kaggle competitions.</description>
     </item>
     
     <item>
