@@ -5,12 +5,6 @@ app
         window.AudioContext = window.AudioContext || window.webkitAudioContext;
         window.audioContext = null;
         $scope.muted = true
-
-        $scope.initAudio = function () {
-            console.log('init audio')
-
-        }
-
         $scope.search = '';
         $scope.messages = [];
 
@@ -113,6 +107,15 @@ app
             source.buffer = audioBuffer;
             source.connect($scope.gainNode);
             source.start(0);
+        }
+
+        function guid() {
+            function s4() {
+                return Math.floor((1 + Math.random()) * 0x10000)
+                    .toString(16)
+                    .substring(1);
+            }
+            return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
         }
 
 
