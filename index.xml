@@ -79,11 +79,20 @@ pip install jupyter_nbextensions_configurator jupyter_contrib_nbextensions jupyt
     </item>
     
     <item>
-      <title>About Me</title>
+      <title></title>
       <link>https://ndres.me/about/</link>
       <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ndres.me/about/</guid>
+      <description>{{message.title}}           </description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>https://ndres.me/about_classic/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ndres.me/about_classic/</guid>
       <description>About I am a freelance machine learning engineer with a focus on porting models from prototypes to production. I may be available for your consulting projects.
 Talks I often talks at meetups. You can also find here the video of my conference talk Processing 100+ million images per month with deep learning
 Some of my side projects  Kaggle Past Solutions: A sortable and searchable compilation of solutions to past Kaggle competitions.</description>
