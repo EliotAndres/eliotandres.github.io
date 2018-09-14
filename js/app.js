@@ -9,12 +9,7 @@ app
         $scope.muted = true
 
         $scope.search = '';
-        $scope.messages = [{title: 'This is a test This is a test This is a test This is a test This is a testThis is a test This is a test This is a test This is a test', question: true},
-            {title: 'This is a test This is a test This is a test This is a test This is a testThis is a test This is a test This is a test This is a test', question: false},
-            {title: 'This is a test This is a test This is a test This is a test This is a testThis is a test This is a test This is a test This is a test', question: false},
-            {title: 'This is a test This is a test This is a test This is a test This is a testThis is a test This is a test This is a test This is a test', question: false},
-            {title: 'This is a test This is a test This is a test This is a test This is a testThis is a test This is a test This is a test This is a test', question: false},
-            {title: 'This is a test3', question: true}, {title: 'This is a test4', question: false},];
+        $scope.messages = [];
 
         $scope.listenToSpeech = function() {
             if (typeof webkitSpeechRecognition === 'undefined') {
