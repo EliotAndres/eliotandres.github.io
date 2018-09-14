@@ -98,13 +98,17 @@ app
         }
 
         function playByteArray( bytes ) {
+            if (window.audioContext == null) {
+                return
+            }
+
             var buffer = new Uint8Array( bytes.length );
-            buffer.set( new Uint8Array(bytes), 0 );
+            buffer.set(new Uint8Array(bytes), 0);
 
             window.audioContext.decodeAudioData(buffer.buffer, play);
         }
 
-        function play( audioBuffer ) {
+        function play(audioBuffer) {
             var source = window.audioContext.createBufferSource();
             source.buffer = audioBuffer;
             source.connect($scope.gainNode);
