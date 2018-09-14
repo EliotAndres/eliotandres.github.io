@@ -7,6 +7,7 @@ app
         $scope.muted = true
         $scope.search = '';
         $scope.messages = [];
+        $scope.sessionId = guid()
 
         $scope.listenToSpeech = function() {
             if (typeof webkitSpeechRecognition === 'undefined') {
@@ -71,7 +72,7 @@ app
             scrollToBottom()
             $http({
                 method: 'GET',
-                url: 'https://us-central1-job-interview-b2b48.cloudfunctions.net/helloWorld?text=' + text
+                url: 'https://us-central1-job-interview-b2b48.cloudfunctions.net/helloWorld?text=' + text + '&session=' + $scope.sessionId
             }).then(function successCallback(response) {
                 console.log(response.data)
                 playByteArray(response.data.outputAudio.data)
