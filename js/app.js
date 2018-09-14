@@ -2,11 +2,17 @@ var app = angular.module('app', []);
 
 app
     .controller('MainController', function MainController($scope, $timeout, $http) {
-        var audioContext = new AudioContext();
-        var gainNode = audioContext.createGain();
-        gainNode.gain.value = 0;
-        gainNode.connect(audioContext.destination);
+        window.AudioContext = window.AudioContext || window.webkitAudioContext;
+        window.audioContext = null;
         $scope.muted = true
+
+        $scope.initAudio = function () {
+            console.log('init audio')
+            window.audioContext = new AudioContext();
+            $scope.gainNode = window.audioContext.createGain();
+            $scope.gainNode.gain.value = 1;
+            $scope.gainNode.connect(window.audioContext.destination);
+        }
 
         $scope.search = '';
         $scope.messages = [];
@@ -41,14 +47,22 @@ app
             sendToChatbot($scope.search)
         }
 
-        $scope.toggleMute = function (e) {
-            if ($scope.muted) {
-                audioContext.resume()
-                gainNode.gain.value = 1;
-            } else {
-                gainNode.gain.value = 0;
+        window.toggleMute = function (e) {
+            console.log('toggle mute')
+            if (window.audioContext === null) {
+                $scope.initAudio()
             }
-            $scope.muted = !$scope.muted
+
+            $timeout(function () {
+                if ($scope.muted) {
+                    window.audioContext.resume()
+                    $scope.gainNode.gain.value = 1;
+                } else {
+                    $scope.gainNode.gain.value = 0;
+                }
+                $scope.muted = !$scope.muted
+            }, 0)
+
         }
 
         var scrollToBottom = function () {
@@ -87,13 +101,13 @@ app
             var buffer = new Uint8Array( bytes.length );
             buffer.set( new Uint8Array(bytes), 0 );
 
-            audioContext.decodeAudioData(buffer.buffer, play);
+            window.audioContext.decodeAudioData(buffer.buffer, play);
         }
 
         function play( audioBuffer ) {
-            var source = audioContext.createBufferSource();
+            var source = window.audioContext.createBufferSource();
             source.buffer = audioBuffer;
-            source.connect( gainNode );
+            source.connect($scope.gainNode);
             source.start(0);
         }
 
