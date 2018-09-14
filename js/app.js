@@ -8,10 +8,7 @@ app
 
         $scope.initAudio = function () {
             console.log('init audio')
-            window.audioContext = new AudioContext();
-            $scope.gainNode = window.audioContext.createGain();
-            $scope.gainNode.gain.value = 1;
-            $scope.gainNode.connect(window.audioContext.destination);
+
         }
 
         $scope.search = '';
@@ -50,7 +47,10 @@ app
         window.toggleMute = function (e) {
             console.log('toggle mute')
             if (window.audioContext === null) {
-                $scope.initAudio()
+                window.audioContext = new AudioContext();
+                $scope.gainNode = window.audioContext.createGain();
+                $scope.gainNode.gain.value = 1;
+                $scope.gainNode.connect(window.audioContext.destination);£
             }
 
             $timeout(function () {
