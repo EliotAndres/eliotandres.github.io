@@ -50,7 +50,7 @@ app
                 window.audioContext = new AudioContext();
                 $scope.gainNode = window.audioContext.createGain();
                 $scope.gainNode.gain.value = 1;
-                $scope.gainNode.connect(window.audioContext.destination);£
+                $scope.gainNode.connect(window.audioContext.destination);
             }
 
             $timeout(function () {
