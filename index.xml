@@ -84,8 +84,8 @@ pip install jupyter_nbextensions_configurator jupyter_contrib_nbextensions jupyt
       <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ndres.me/about/</guid>
-      <description>I made a chatbot to answer your questions ! You can enable voice by clicking the unmute button.
-{{message.title}}           </description>
+      <description>I made a chatbot to answer your questions ! You can enable voice by clicking the unmute button. A classic about page is also available here.
+Type your questions or use one of the following:  {{question}}   {{message.title}}           </description>
     </item>
     
     <item>

@@ -58,10 +58,17 @@ ga('send', 'pageview');
     <div class="post">
         <h1></h1>
         
-        <p>I made a chatbot to answer your questions ! You can enable voice by clicking the unmute button.</p>
+        <p>I made a chatbot to answer your questions ! You can enable voice by clicking the unmute button.
+A classic about page is also <a href="/about_classic">available here</a>.</p>
 
 <div ng-controller="MainController" ng-app="app" class="chatbot-wrapper">
 
+<div class="intro-wrapper">
+Type your questions or use one of the following:
+<ul>
+<li class="default-question" ng-repeat="question in questions" ng-click="submit(question)">{{question}}</li>
+</ul>
+</div>
 <div class="message-list" id="message-list">
 <ul class="messages clearfix">
     <li ng-repeat="message in messages" class="message" ng-class="message.question ? 'question' : 'answer'">{{message.title}}</li>

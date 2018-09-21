@@ -45,6 +45,9 @@ form {
   .chatbot-wrapper {
     margin-left: -4rem;
   }
+  .intro-wrapper {
+    margin-left: 4rem;
+  }
 }
 
 .clearfix {
@@ -86,4 +89,9 @@ form {
 
 .mute-image {
   margin-right: 5px;
+}
+
+.default-question {
+  cursor: pointer;
+  text-decoration: underline;
 }

@@ -8,6 +8,8 @@ app
         $scope.search = '';
         $scope.messages = [];
         $scope.sessionId = guid()
+        $scope.questions = ['Where did you study ?', 'Do you know TensorFlow ?',
+            'Where do you see yourself in 5 years ?', 'What are your hobbies ?']
 
         $scope.listenToSpeech = function() {
             if (typeof webkitSpeechRecognition === 'undefined') {
@@ -35,8 +37,8 @@ app
             }
         }
 
-        $scope.submit = function () {
-            sendToChatbot($scope.search)
+        $scope.submit = function (query) {
+            sendToChatbot(query || $scope.search)
         }
 
         window.toggleMute = function (e) {
