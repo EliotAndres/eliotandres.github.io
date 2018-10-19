@@ -6,10 +6,21 @@
     <description>Recent content on Eliot Andres blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 May 2018 16:45:13 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 19 Oct 2018 16:14:33 +0900</lastBuildDate>
     
 	<atom:link href="https://ndres.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My approach to solving (almost) any machine learning problem</title>
+      <link>https://ndres.me/post/approach-solve-any-machine-learning/</link>
+      <pubDate>Fri, 19 Oct 2018 16:14:33 +0900</pubDate>
+      
+      <guid>https://ndres.me/post/approach-solve-any-machine-learning/</guid>
+      <description>In this article, I’ll detail the technique I use to solve almost any AI / machine learning project. I can already hear you screaming behind your screen « there is no magic approach to ML » and you’d be right!
+I would say that this technique applied to 90% of my projects. Without further ado, here’s the approach:
+ Find a machine learning competition with a problem close to the one you want to solve Find the winning team’s solution Adapt this solution to your problem  Before detailing each step, I’d like to point out that the winning team solution is not used as is.</description>
+    </item>
     
     <item>
       <title>Machine learning explained with gifs: style transfer</title>
