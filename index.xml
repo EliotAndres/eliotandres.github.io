@@ -6,10 +6,20 @@
     <description>Recent content on Eliot Andres blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Oct 2018 16:14:33 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Jan 2019 14:53:28 -0500</lastBuildDate>
     
 	<atom:link href="https://ndres.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Migrating to TensorFlow 2.0</title>
+      <link>https://ndres.me/post/migrating-tensorflow-2/</link>
+      <pubDate>Sun, 13 Jan 2019 14:53:28 -0500</pubDate>
+      
+      <guid>https://ndres.me/post/migrating-tensorflow-2/</guid>
+      <description>TensorFlow 2.0 preview version has just been announced. In this blog post, I’ll summarize what to expect for migrating your code to this new version.
+Official resources  2.0 first official announcement Preview version announcement 2.0 docs 2.0 design documents explaining the new APIs 2.0 guides and tutorials (might be moved, permalink)  Migrating your code automatically Here&amp;rsquo;s the good news: TensorFlow 2.0 provides an automatic migration tool. After installing the new version, you can run:</description>
+    </item>
     
     <item>
       <title>My approach to solving (almost) any machine learning problem</title>

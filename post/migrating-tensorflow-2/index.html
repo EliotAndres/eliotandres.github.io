@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.37.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>Migrating to TensorFlow 2.0 &middot; Eliot Andres blog</title>
+  
+
+  
+  <link rel="stylesheet" href="https://ndres.me/css/print.css" media="print">
+  <link rel="stylesheet" href="https://ndres.me/css/poole.css">
+  <link rel="stylesheet" href="https://ndres.me/css/syntax.css">
+  <link rel="stylesheet" href="https://ndres.me/css/hyde.css">
+  <link rel="stylesheet" href="https://ndres.me/css/highlight.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ndres.me/images/favicon.png">
+  <link rel="shortcut icon" href="https://ndres.me/images/favicon.png">
+
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Eliot Andres blog" />
+
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-105312541-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+</head>
+
+<body class=" ">
+
+<div class="content container">
+    <div class="main-nav">
+    <a href="/">Home</a>
+    |
+    <a href="/about/">About</a>
+</div>
+
+
+    <div class="post">
+        <h1>Migrating to TensorFlow 2.0</h1>
+        
+        <span class="post-date">Sun, Jan 13, 2019</span>
+        
+        
+
+<p>TensorFlow 2.0 preview version has just been <a href="https://groups.google.com/a/tensorflow.org/forum/#!topic/developers/aKdmUOiyzGM" target="_blank">announced</a>.
+In this blog post, I’ll summarize what to expect for migrating your code to this new version.</p>
+
+<h2 id="official-resources">Official resources</h2>
+
+<ul>
+<li><a href="https://groups.google.com/a/tensorflow.org/forum/?#!topic/announce/qXfsxr2sF-0" target="_blank">2.0 first official announcement</a></li>
+<li><a href="https://groups.google.com/a/tensorflow.org/forum/#!topic/developers/aKdmUOiyzGM" target="_blank">Preview version announcement</a></li>
+<li><a href="https://www.tensorflow.org/versions/r2.0/api_docs/python/tf" target="_blank">2.0 docs</a></li>
+<li><a href="https://github.com/tensorflow/community/tree/master/rfcs" target="_blank">2.0 design documents explaining the new APIs</a></li>
+<li><a href="https://github.com/tensorflow/docs/tree/master/site/en/r2" target="_blank">2.0 guides and tutorials</a> (might be moved, <a href="https://github.com/tensorflow/docs/tree/ab40de5b068f135a6f1840ba2dd7465386f4edc8/site/en/r2" target="_blank">permalink)</a></li>
+</ul>
+
+<h2 id="migrating-your-code-automatically">Migrating your code automatically</h2>
+
+<p>Here&rsquo;s the good news: TensorFlow 2.0 provides an <strong>automatic migration tool</strong>. After <a href="https://www.tensorflow.org/versions/r2.0/api_docs/python/tf" target="_blank">installing the new version</a>, you can run:</p>
+
+<pre><code>tf_upgrade_v2 --intree ./project_directory --outtree ./project_directory_updated
+</code></pre>
+
+<p>So what is this tool doing ? It&rsquo;s mostly moving your code to <code>tf.compat.v1</code>, changing the name of the arguments if necessary.
+The script should update your code to make it work, but will not make it follow TensorFlow 2.0 best practices.</p>
+
+<p>Moreover, it does not work with <code>tf.contrib</code>. Indeed, this module has been removed from TensorFlow 2.0,
+with most of the APIs moved to TensorFlow core or external repositories. <a href="https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md" target="_blank">See the details here</a></p>
+
+<h2 id="migrating-your-code-manually">Migrating your code manually</h2>
+
+<p>While your code will work using <code>tf.compat.v1</code>, to follow TensorFlow 2.0 new philosophy you will have to update your code.
+Here are the biggest changes:</p>
+
+<ul>
+<li>as stated above, <code>tf.contrib</code> will disappear</li>
+<li>using eager execution is recommended (<a href="https://github.com/tensorflow/docs/blob/master/site/en/r2/guide/eager.ipynb" target="_blank">see example notebook</a>)</li>
+<li>the <code>tf.Session</code> API will disappear in favor of <code>tf.function</code> (<a href="https://github.com/tensorflow/docs/blob/master/site/en/r2/guide/autograph.ipynb" target="_blank">see example notebook</a>)</li>
+<li><code>tf.layers</code> will disappear, model definition should be done using <code>tf.keras</code></li>
+</ul>
+
+<p>A <strong>very good explanation</strong> is available in the official TensorFlow 2.0 guides <a href="https://github.com/tensorflow/community/blob/b1d83bf2ee3fc72650140b89656e29932db36226/rfcs/20180918-functions-not-sessions-20.md" target="_blank">here</a>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Note that this is only a preview version: expect some bugs and inconsistencies. Nevertheless,
+it should give you a good vision on this substantial TensorFlow update. In upcoming blogposts, I&rsquo;ll detail each of the new
+changes in TensorFlow.</p>
+
+<p><em>I&rsquo;m still unsure about the future of TensorFlow Estimators and TPUs.
+If you have any info about this, reach out to me <a href="https://twitter.com/EliotAndres" target="_blank">on Twitter</a>.</em></p>
+
+    </div>
+
+    
+</div>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://ndres.me/">
+        <img class="sidebar-avatar-image" class="2x" src="https://ndres.me/images/avatar.jpg"/>
+      </a>
+      <h1><a href="https://ndres.me/">Eliot Andres</a>&nbsp;
+        <a href="https://twitter.com/eliotandres"
+           class="twitter-follow-button"
+           data-show-count="false"
+           data-show-screen-name="false"></a></h1>
+      <p class="sidebar-bio">Freelance machine learning and computer vision engineer. Available for consulting jobs. <a href="/about/">More</a></p>
+    </div>
+
+
+  </div>
+  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <p class="sidebar-copyright">While the models are training: a machine learning blog</p>
+</div>
+
+
+<script src="https://ndres.me/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
