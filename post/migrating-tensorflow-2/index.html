@@ -80,7 +80,7 @@ In this blog post, I’ll summarize what to expect for migrating your code to th
 <pre><code>tf_upgrade_v2 --intree ./project_directory --outtree ./project_directory_updated
 </code></pre>
 
-<p>So what is this tool doing ? It&rsquo;s mostly moving your code to <code>tf.compat.v1</code>, changing the name of the arguments if necessary.
+<p>So what is this tool doing ? It&rsquo;s mostly moving your code to <code>tf.compat.v1</code> and changing the name of the arguments if necessary.
 The script should update your code to make it work, but will not make it follow TensorFlow 2.0 best practices.</p>
 
 <p>Moreover, it does not work with <code>tf.contrib</code>. Indeed, this module has been removed from TensorFlow 2.0,
