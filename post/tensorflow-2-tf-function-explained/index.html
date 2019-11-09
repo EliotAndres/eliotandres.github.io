@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   
-  <title>Tags &middot; Eliot Andres blog</title>
+  <title>TensorFlow 2.0: @tf.function explained with examples &middot; Eliot Andres blog</title>
   
 
   
@@ -28,7 +28,7 @@
 
 
   
-  <link href="https://ndres.me/tags/index.xml" rel="alternate" type="application/rss+xml" title="Eliot Andres blog" />
+  <link href="" rel="alternate" type="application/rss+xml" title="Eliot Andres blog" />
 
   
 <script type="application/javascript">
@@ -48,7 +48,45 @@ if (!doNotTrack) {
 
 <body class=" ">
 
-  <div class="sidebar">
+<div class="content container">
+    <div class="main-nav">
+    <a href="/">Home</a>
+    |
+    <a href="/about/">About</a>
+</div>
+
+
+    <div class="post">
+        <h1>TensorFlow 2.0: @tf.function explained with examples</h1>
+        
+        <span class="post-date">Mon, Jan 14, 2019</span>
+        
+        <p>In TensorFlow 2.0, the use of the graph has been deprecated in favor of the decorator <code>@tf.function</code>.
+In Python, a decorator can be added on just before a function declaration to change its behavior:</p>
+
+<pre><code>def relu(x):
+  return x if x &gt; 0 else 0
+
+relu(-1)
+</code></pre>
+
+<p>With the decorator</p>
+
+<pre><code>@tf.function
+def relu_decorated(x):
+    return x if x &gt; 0 else 0
+
+relu_decorated(-1)
+</code></pre>
+
+<p>So what is the <code>tf.function</code> doing ? It&rsquo;s turning our Python code into TensorFlow code using a module named
+autograph. We can actually have a look at what&rsquo;s happening behind the scene by running:</p>
+
+    </div>
+
+    
+</div>
+<div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
       <a href="https://ndres.me/">
@@ -69,10 +107,8 @@ if (!doNotTrack) {
 </div>
 
 
-  <div class="content container">
-    <ul class="posts">
-      
-    </ul>
-  </div>
+<script src="https://ndres.me/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 </body>
 </html>

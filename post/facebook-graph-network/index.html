@@ -3,7 +3,7 @@
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.37.1" />
+  <meta name="generator" content="Hugo 0.58.2" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -31,14 +31,17 @@
   <link href="" rel="alternate" type="application/rss+xml" title="Eliot Andres blog" />
 
   
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-105312541-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-105312541-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
 </head>
@@ -62,21 +65,11 @@ ga('send', 'pageview');
 
 <p>Inspired by a friend&rsquo;s  post, I decided to plot my Facebook network. To do so, I scrapped &ldquo;mutual friends&rdquo; and made the following graph:</p>
 
-
-<figure>
-    <a href="/images/facebook-graph.jpg" target="_blank">
-        <img src="/images/facebook-graph.jpg" alt="Facebook friend network (click to enlarge)" />
-    </a>
-    
-    <figcaption>
-        <p>
-        Facebook friend network (click to enlarge)
-        
-            
-        
-        </p> 
-    </figcaption>
-    
+<figure><a href="/images/facebook-graph.jpg" target="_blank">
+    <img src="/images/facebook-graph.jpg"
+         alt="Facebook friend network (click to enlarge)"/> </a><figcaption>
+            <p>Facebook friend network (click to enlarge)</p>
+        </figcaption>
 </figure>
 
 
@@ -117,10 +110,10 @@ It is a is a force-directed algorithm. The general idea is to represent each fri
 <p>You&rsquo;ll find an animation of the community merging below:</p>
 
 
-<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/dGa-TXpoPz8?"
-  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/dGa-TXpoPz8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
+
 
 <p>Video credits to <a href="https://github.com/keithpjolley" target="_blank">Keith Jolley</a></p>
 
@@ -144,7 +137,7 @@ It is a is a force-directed algorithm. The general idea is to represent each fri
            class="twitter-follow-button"
            data-show-count="false"
            data-show-screen-name="false"></a></h1>
-      <p class="sidebar-bio">Freelance machine learning and computer vision engineer. Available for consulting jobs. <a href="/about/">More</a></p>
+      <p class="sidebar-bio">Computer Vision engineer at <a href="https://artizans.ai" target="_blank">Artizans</a>, maker of <a href="https://photoroom.app/" target="_blank">PhotoRoom</a>, author of <a href="https://amzn.to/2Znjpht" target="_blank">the book</a> Hands-On Computer Vision with TensorFlow 2 <a href="/about_classic/">More</a></p>
     </div>
 
 
