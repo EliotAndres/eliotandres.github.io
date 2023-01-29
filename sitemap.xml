@@ -1,88 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://ndres.me/</loc>
     <lastmod>2019-01-13T14:53:28-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ndres.me/post/migrating-tensorflow-2/</loc>
     <lastmod>2019-01-13T14:53:28-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ndres.me/post/</loc>
     <lastmod>2019-01-13T14:53:28-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ndres.me/post/approach-solve-any-machine-learning/</loc>
     <lastmod>2018-10-19T16:14:33+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ndres.me/post/machine-learning-with-gifs-style-transfer/</loc>
     <lastmod>2018-05-29T16:45:13+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ndres.me/post/matplotlib-animated-gifs-easily/</loc>
     <lastmod>2018-05-14T21:33:13+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ndres.me/post/using-neural-network-generate-startup-name/</loc>
     <lastmod>2018-05-07T20:50:22+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ndres.me/post/friend-graph-tutorial/</loc>
     <lastmod>2018-04-30T16:13:15+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ndres.me/post/facebook-graph-network/</loc>
     <lastmod>2018-04-23T11:02:15+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ndres.me/post/best-jupyter-notebook-extensions/</loc>
     <lastmod>2018-03-06T11:48:17+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ndres.me/about/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ndres.me/about_classic/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ndres.me/post/convert-caffe-to-tensorflow/</loc>
     <lastmod>2017-06-07T23:02:15+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ndres.me/post/faster-inference-tensorflow/</loc>
     <lastmod>2017-05-08T14:52:12+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ndres.me/post/jupyter-notebook-rest-api/</loc>
     <lastmod>2017-05-07T16:25:35+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ndres.me/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ndres.me/tags/</loc>
   </url>
-  
 </urlset>
