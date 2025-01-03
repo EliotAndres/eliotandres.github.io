@@ -3,7 +3,7 @@
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.58.2" />
+  <meta name="generator" content="Hugo 0.92.2" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -43,7 +43,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 </head>
 
 <body class=" ">
@@ -61,62 +60,39 @@ if (!doNotTrack) {
         
         <span class="post-date">Mon, Apr 30, 2018</span>
         
-        
-
-<p>Last week I published <a href="/post/facebook-graph-network/">an article</a> showing you how I built a friend graph using you Facebook data.</p>
-
+        <p>Last week I published <a href="/post/facebook-graph-network/">an article</a> showing you how I built a friend graph using you Facebook data.</p>
 <p>This article is a detailed version showing you how to do it yourself. Here&rsquo;s what we&rsquo;ll end up with:</p>
-
-<figure><a href="/images/facebook-graph.jpg" target="_blank">
-    <img src="/images/facebook-graph.jpg"
-         alt="Facebook friend network (click to enlarge)"/> </a><figcaption>
+<figure><a href="/images/facebook-graph.jpg" target="_blank"><img src="/images/facebook-graph.jpg"
+         alt="Facebook friend network (click to enlarge)"/></a><figcaption>
             <p>Facebook friend network (click to enlarge)</p>
         </figcaption>
 </figure>
 
-
 <p><strong>Warning</strong>: To make such a graph, you need to scape all your mutual friends. Scrapping is automated but can take a few hours.</p>
-
 <p>Let&rsquo;s get started !</p>
-
 <h2 id="scrapping-the-data">Scrapping the data</h2>
-
 <p>Facebook does not let you access friends you have in common via any API, so we&rsquo;ll have to scrappe the data.</p>
-
 <p>Clone the repo, and install requirements:</p>
-
 <pre><code>git clone https://github.com/EliotAndres/facebook-friend-graph
 cd facebook-friend-graph
 pip install -r requirements.txt
 </code></pre>
-
 <p>The scrapping script will open a Chrome window and go to each of your friends profile. It&rsquo;ll then read the DOM to save your mutual friends.</p>
-
-<p>It&rsquo;s using the Chrome drive, so you must also <a href="https://sites.google.com/a/chromium.org/chromedriver/" target="_blank">install it</a>. Once done, you can run:</p>
-
+<p>It&rsquo;s using the Chrome drive, so you must also <a href="https://sites.google.com/a/chromium.org/chromedriver/">install it</a>. Once done, you can run:</p>
 <pre><code>python facebookFOF.py
 </code></pre>
-
 <p>The script will prompt you for your username/password. You&rsquo;ll see a progress bar. It will periodically save the graph. So if it fails, you can just restart it and it&rsquo;ll start where it stopped.
 It can take up to a few hours depending on your connection.</p>
-
 <p>You&rsquo;ll end up with a .pickle file containing you friend graph information. Now let&rsquo;s plot this data !</p>
-
 <h2 id="building-the-graph">Building the graph</h2>
-
-<p>You&rsquo;ll find all the details in the notebook below. <a href="https://github.com/EliotAndres/facebook-friend-graph/blob/master/Facebook%20friend%20graph.ipynb" target="_blank">It&rsquo;s available here.</a>
-<script src="https://gist.github.com/EliotAndres/10d87567a2f81209f4c9be62c421a5df.js"></script></p>
-
+<p>You&rsquo;ll find all the details in the notebook below. <a href="https://github.com/EliotAndres/facebook-friend-graph/blob/master/Facebook%20friend%20graph.ipynb">It&rsquo;s available here.</a></p>
+<!-- raw HTML omitted -->
 <h2 id="conclusion">Conclusion</h2>
-
 <p>The graph should be made of differentiated clusters. You can hover over the clusters to see your friends names.
- You can also play with the parameters and the colors to make it suit your needs. <strong>If you encounter any problem, open an issue on Github.</strong></p>
-
+You can also play with the parameters and the colors to make it suit your needs. <strong>If you encounter any problem, open an issue on Github.</strong></p>
 <h2 id="acknowledgements">Acknowledgements</h2>
-
-<p>Original notebook author: <a href="https://twitter.com/lucasallenio" target="_blank">Lucas Allen</a>, <a href="https://github.com/lgallen/twitter-graph" target="_blank">original code</a></p>
-
-<p>Original scrapping code (Python 2) <a href="https://github.com/giladravid/FacebookFOF" target="_blank">here</a></p>
+<p>Original notebook author: <a href="https://twitter.com/lucasallenio">Lucas Allen</a>, <a href="https://github.com/lgallen/twitter-graph">original code</a></p>
+<p>Original scrapping code (Python 2) <a href="https://github.com/giladravid/FacebookFOF">here</a></p>
 
     </div>
 
@@ -133,7 +109,7 @@ It can take up to a few hours depending on your connection.</p>
            class="twitter-follow-button"
            data-show-count="false"
            data-show-screen-name="false"></a></h1>
-      <p class="sidebar-bio">Computer Vision engineer at <a href="https://artizans.ai" target="_blank">Artizans</a>, maker of <a href="https://photoroom.app/" target="_blank">PhotoRoom</a>, author of <a href="https://amzn.to/2Znjpht" target="_blank">the book</a> Hands-On Computer Vision with TensorFlow 2 <a href="/about_classic/">More</a></p>
+      <p class="sidebar-bio">CTO at <a href="https://photoroom.com/">Photoroom</a>, author of <a href="https://amzn.to/2Znjpht">the book</a> Hands-On Computer Vision with TensorFlow 2 <a href="/about_classic/">More</a></p>
     </div>
 
 

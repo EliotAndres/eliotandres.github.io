@@ -3,7 +3,7 @@
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.58.2" />
+  <meta name="generator" content="Hugo 0.92.2" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -43,7 +43,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 </head>
 
 <body class=" ">
@@ -61,64 +60,42 @@ if (!doNotTrack) {
         
         <span class="post-date">Mon, Apr 23, 2018</span>
         
-        
-
-<p>Inspired by a friend&rsquo;s  post, I decided to plot my Facebook network. To do so, I scrapped &ldquo;mutual friends&rdquo; and made the following graph:</p>
-
-<figure><a href="/images/facebook-graph.jpg" target="_blank">
-    <img src="/images/facebook-graph.jpg"
-         alt="Facebook friend network (click to enlarge)"/> </a><figcaption>
+        <p>Inspired by a friend&rsquo;s  post, I decided to plot my Facebook network. To do so, I scrapped &ldquo;mutual friends&rdquo; and made the following graph:</p>
+<figure><a href="/images/facebook-graph.jpg" target="_blank"><img src="/images/facebook-graph.jpg"
+         alt="Facebook friend network (click to enlarge)"/></a><figcaption>
             <p>Facebook friend network (click to enlarge)</p>
         </figcaption>
 </figure>
 
-
 <p>In this blog post, I&rsquo;ll explain how the graph is made and how clusters are created. In a following blog post, I&rsquo;ll explain how to make it yourself.</p>
-
 <h1 id="a-few-comments-on-the-graph">A few comments on the graph</h1>
-
 <p>In this graph, each friend is represented by a node. Each edge represents a friendship.
 You&rsquo;ll see that clusters are roughly made of where I went to school or in holidays.
-One cluster is the group of people I&rsquo;m traveling with as part of my <a href="http://remoteyear.com/" target="_blank">Remote Year</a>.
+One cluster is the group of people I&rsquo;m traveling with as part of my <a href="http://remoteyear.com/">Remote Year</a>.
 The node in the middle represents me.</p>
-
 <h1 id="how-it-was-made">How it was made</h1>
-
-<h3 id="1-scrapping-mutual-friends">1 - Scrapping mutual friends</h3>
-
+<h3 id="1---scrapping-mutual-friends">1 - Scrapping mutual friends</h3>
 <p>Facebook does not let you access friends you have in common via any API, so I had to make a script to gather the relationships. I ended up with a list of edges (friend1 &lt;-&gt; friend2)</p>
-
-<h3 id="2-plotting-the-graph">2 - Plotting the graph</h3>
-
-<p>The position of the nodes is computed using the <a href="https://en.wikipedia.org/wiki/Force-directed_graph_drawing" target="_blank">Fruchterman-Reingold Algorithm</a>.
+<h3 id="2---plotting-the-graph">2 - Plotting the graph</h3>
+<p>The position of the nodes is computed using the <a href="https://en.wikipedia.org/wiki/Force-directed_graph_drawing">Fruchterman-Reingold Algorithm</a>.
 It is a is a force-directed algorithm. The general idea is to represent each friendship by a spring. The consequences are:</p>
-
 <ul>
 <li>When you are part of a large group of people, the numerous springs will bring you closer to the group.</li>
 <li>If you are friend with 2 large groups, you&rsquo;ll appear in the middle of the 2 groups because of the opposing forces.</li>
 <li>If you are friend with only a few people, you&rsquo;ll appear on the outter border of the graph</li>
 </ul>
-
-<h3 id="3-clustering">3 - Clustering</h3>
-
-<p>You&rsquo;ll also notice that each group has a different color. Each color represents a community. To create those communities, I used the <a href="https://en.wikipedia.org/wiki/Louvain_Modularity" target="_blank">Louvain Method for community detection</a>. The method attempts to maximize <a href="https://en.wikipedia.org/wiki/Modularity_(networks)" target="_blank">modularity</a>. The general idea of modularity is to measure the number of connections between people of different communities.</p>
-
+<h3 id="3---clustering">3 - Clustering</h3>
+<p>You&rsquo;ll also notice that each group has a different color. Each color represents a community. To create those communities, I used the <a href="https://en.wikipedia.org/wiki/Louvain_Modularity">Louvain Method for community detection</a>. The method attempts to maximize <a href="https://en.wikipedia.org/wiki/Modularity_(networks)">modularity</a>. The general idea of modularity is to measure the number of connections between people of different communities.</p>
 <p>Therefore if the graph has a high modularity, it means that there are few edges connecting 2 nodes of different communities but numerous edges connecting 2 nodes of the same community.</p>
-
 <p>In the Louvain Method of community detection, small communities are found by optimizing modularity locally on all nodes. Then each small community is grouped into one larger community.</p>
-
 <p>You&rsquo;ll find an animation of the community merging below:</p>
-
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/dGa-TXpoPz8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
-<p>Video credits to <a href="https://github.com/keithpjolley" target="_blank">Keith Jolley</a></p>
-
+<p>Video credits to <a href="https://github.com/keithpjolley">Keith Jolley</a></p>
 <h1 id="make-it-yourself">Make it yourself</h1>
-
 <p>I&rsquo;m currently writing a tutorial on how to make it yourself. When it&rsquo;ll be ready, I&rsquo;ll update this blog post.
 <strong>Update</strong>: <a href="/post/friend-graph-tutorial/">here&rsquo;s the blog post</a></p>
 
@@ -137,7 +114,7 @@ It is a is a force-directed algorithm. The general idea is to represent each fri
            class="twitter-follow-button"
            data-show-count="false"
            data-show-screen-name="false"></a></h1>
-      <p class="sidebar-bio">Computer Vision engineer at <a href="https://artizans.ai" target="_blank">Artizans</a>, maker of <a href="https://photoroom.app/" target="_blank">PhotoRoom</a>, author of <a href="https://amzn.to/2Znjpht" target="_blank">the book</a> Hands-On Computer Vision with TensorFlow 2 <a href="/about_classic/">More</a></p>
+      <p class="sidebar-bio">CTO at <a href="https://photoroom.com/">Photoroom</a>, author of <a href="https://amzn.to/2Znjpht">the book</a> Hands-On Computer Vision with TensorFlow 2 <a href="/about_classic/">More</a></p>
     </div>
 
 

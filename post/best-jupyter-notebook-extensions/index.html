@@ -3,7 +3,7 @@
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.58.2" />
+  <meta name="generator" content="Hugo 0.92.2" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -43,7 +43,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 </head>
 
 <body class=" ">
@@ -61,110 +60,85 @@ if (!doNotTrack) {
         
         <span class="post-date">Tue, Mar 6, 2018</span>
         
-        
-
-<p>Notebook extensions are plug-ins that you can easily add to your Jupyter notebooks.
-The best way to install them is to use <a href="https://github.com/Jupyter-contrib/jupyter_nbextensions_configurator" target="_blank">Jupyter NbExtensions Configurator</a>.
- It will add a tab to let you enable/disable extensions:</p>
-
-<figure>
-    <img src="/images/jupyter-nbextensions.png"
-         alt="Screenshot of NbExtensions Configurator"/> <figcaption>
+        <p>Notebook extensions are plug-ins that you can easily add to your Jupyter notebooks.
+The best way to install them is to use <a href="https://github.com/Jupyter-contrib/jupyter_nbextensions_configurator">Jupyter NbExtensions Configurator</a>.
+It will add a tab to let you enable/disable extensions:</p>
+<figure><img src="/images/jupyter-nbextensions.png"
+         alt="Screenshot of NbExtensions Configurator"/><figcaption>
             <p>Screenshot of NbExtensions Configurator</p>
         </figcaption>
 </figure>
 
-
 <h2 id="installation">Installation</h2>
-
 <p>Installation with conda:</p>
-
 <pre><code>conda install -c conda-forge jupyter_contrib_nbextensions
 conda install -c conda-forge jupyter_nbextensions_configurator
 </code></pre>
-
 <p>Or with pip:</p>
-
 <pre><code>pip install jupyter_nbextensions_configurator jupyter_contrib_nbextensions
 jupyter contrib nbextension install --user
 jupyter nbextensions_configurator enable --user
 </code></pre>
-
-<p>Find more info about installation <a href="https://github.com/Jupyter-contrib/jupyter_nbextensions_configurator#installation" target="_blank">here</a></p>
-
-<h2 id="1-collapsible-headings">1 - Collapsible headings</h2>
-
+<p>Find more info about installation <a href="https://github.com/Jupyter-contrib/jupyter_nbextensions_configurator#installation">here</a></p>
+<h2 id="1---collapsible-headings">1 - Collapsible headings</h2>
 <p>Very useful when dealing with large notebooks, collapsible headings allow you to collapse some parts of the notebooks.
-<figure>
-    <img src="/images/collapsible-headings.gif"
-         alt="Using collapsible headings"/> <figcaption>
+<figure><img src="/images/collapsible-headings.gif"
+         alt="Using collapsible headings"/><figcaption>
             <p>Using collapsible headings</p>
         </figcaption>
 </figure>
 </p>
-
-<h2 id="2-notify">2 - Notify</h2>
-
+<h2 id="2---notify">2 - Notify</h2>
 <p>For long running task, the notify extension sends a notification when the notebook becomes idle.
-<figure>
-    <img src="/images/jupyter-notification.gif"
-         alt="Using notify"/> <figcaption>
+<figure><img src="/images/jupyter-notification.gif"
+         alt="Using notify"/><figcaption>
             <p>Using notify</p>
         </figcaption>
 </figure>
 </p>
-
 <p><em>To use it, enable the extension and then enable it in the button bar.
 The number you select is the minimum time the notebook has to run for you to get a notification (Note that you have to keep the notebook open in the browser for the notification to work)</em></p>
-
-<h2 id="3-code-folding">3 - Code folding</h2>
-
-<figure>
-    <img src="/images/jupyter-code-folding.gif"
-         alt="Using code folding"/> <figcaption>
+<h2 id="3---code-folding">3 - Code folding</h2>
+<figure><img src="/images/jupyter-code-folding.gif"
+         alt="Using code folding"/><figcaption>
             <p>Using code folding</p>
         </figcaption>
 </figure>
 
-
-<h2 id="4-tqdm-notebook">4 - tqdm_notebook</h2>
-
-<p>This one is not really an notebook extension. TQDM is a progress bar library. But it sometimes fails to work properly on Jupyter Notebooks. Thanks to <a href="https://twitter.com/randal_olson" target="_blank">Randy Olson</a> for the tip:
-<blockquote class="twitter-tweet" data-lang="fr"><p lang="en" dir="ltr">TIL: tqdm (the <a href="https://twitter.com/hashtag/Python?src=hash&amp;ref_src=twsrc%5Etfw">#Python</a> progress bar library) has a specialized &quot;tqdm_notebook&quot; function for use in Jupyter Notebooks.<br><br>No more messed up progress bars in my notebooks - hooray!<a href="https://t.co/r0jAQXQ6TM">https://t.co/r0jAQXQ6TM</a> <a href="https://t.co/FyYBRm2qE1">pic.twitter.com/FyYBRm2qE1</a></p>&mdash; Randy Olson (@randal_olson) <a href="https://twitter.com/randal_olson/status/969657169342734336?ref_src=twsrc%5Etfw">2 mars 2018</a></blockquote></p>
-
-<h2 id="5-debug">5 - %debug</h2>
-
-<p>Not a notebook extension but an <a href="http://ipython.readthedocs.io/en/stable/interactive/magics.html" target="_blank">IPython magic</a> command. For a great explanation, I suggest reading the <a href="https://twitter.com/radekosmulski/status/945739571735748609" target="_blank">full twitter thread</a> from <a href="https://twitter.com/radekosmulski" target="_blank">Radek Osmulski</a>
-<blockquote class="twitter-tweet" data-lang="fr"><p lang="en" dir="ltr">Favorite recent jupyter notebook discovery - the %debug magic:<br><br>1. Get an exception.<br>2. Insert a new cell, type %debug and run it.<br><br>An interactive debugger will open bringing you to where the exception occurred and allowing you to look around! <a href="https://t.co/9DSnSbpu15">pic.twitter.com/9DSnSbpu15</a></p>&mdash; Radek (@radekosmulski) <a href="https://twitter.com/radekosmulski/status/945739571735748609?ref_src=twsrc%5Etfw">26 décembre 2017</a></blockquote></p>
-
-<h2 id="6-smaller-extensions-and-other-tips">6 - Smaller extensions and other tips</h2>
-
+<h2 id="4---tqdm_notebook">4 - tqdm_notebook</h2>
+<p>This one is not really an notebook extension. TQDM is a progress bar library. But it sometimes fails to work properly on Jupyter Notebooks. Thanks to <a href="https://twitter.com/randal_olson">Randy Olson</a> for the tip:</p>
+<!-- raw HTML omitted -->
+<h2 id="5---debug">5 - %debug</h2>
+<p>Not a notebook extension but an <a href="http://ipython.readthedocs.io/en/stable/interactive/magics.html">IPython magic</a> command. For a great explanation, I suggest reading the <a href="https://twitter.com/radekosmulski/status/945739571735748609">full twitter thread</a> from <a href="https://twitter.com/radekosmulski">Radek Osmulski</a></p>
+<!-- raw HTML omitted -->
+<h2 id="6---smaller-extensions-and-other-tips">6 - Smaller extensions and other tips</h2>
 <ul>
-<li><strong>%lsmagic</strong>: Run this in a cell to list all available IPython magics</li>
-<li><strong>Zen mode extension</strong>: removes the menus for less distractions</li>
-<li><strong>Execute time extension</strong>: shows how long a cell took to run</li>
-
-<li><p><strong>autoreload</strong>: Autoreloads external files without having to restart the notebook. To enable it:</p>
-
-<pre><code>%load_ext autoreload
-%autoreload 2
-</code></pre></li>
+<li>
+<p><strong>%lsmagic</strong>: Run this in a cell to list all available IPython magics</p>
+</li>
+<li>
+<p><strong>Zen mode extension</strong>: removes the menus for less distractions</p>
+</li>
+<li>
+<p><strong>Execute time extension</strong>: shows how long a cell took to run</p>
+</li>
+<li>
+<p><strong>autoreload</strong>: Autoreloads external files without having to restart the notebook. To enable it:</p>
+<pre><code>  %load_ext autoreload
+  %autoreload 2
+</code></pre>
+</li>
 </ul>
-
-<h2 id="you-know-a-must-have-notebook-extension-hit-me-on-twitter-or-make-a-pull-request-on-this-blog-post">You know a must-have notebook extension ? Hit me on twitter or make a pull request on this blog post !</h2>
-
+<h2 id="you-know-a-must-have-notebook-extension--hit-me-on-twitter-or-make-a-pull-request-on-this-blog-post-">You know a must-have notebook extension ? Hit me on twitter or make a pull request on this blog post !</h2>
 <h3 id="edit-on-wed-mar-7-2018">Edit on Wed, Mar 7, 2018:</h3>
-
-<p>Some people <a href="https://www.reddit.com/r/MachineLearning/comments/82fcw0/d_top_5_best_jupyter_notebook_extensions/" target="_blank">on Reddit</a> suggested a few more:</p>
-
+<p>Some people <a href="https://www.reddit.com/r/MachineLearning/comments/82fcw0/d_top_5_best_jupyter_notebook_extensions/">on Reddit</a> suggested a few more:</p>
 <ul>
-<li><strong><a href="http://jupyter-contrib-nbextensions.readthedocs.io/en/latest/nbextensions/varInspector/README.html" target="_blank">Variable inspector</a></strong>: displays all variables in a floating window</li>
+<li><strong><a href="http://jupyter-contrib-nbextensions.readthedocs.io/en/latest/nbextensions/varInspector/README.html">Variable inspector</a></strong>: displays all variables in a floating window</li>
 <li><strong>CodeMirror Keymap</strong>: lets you choose between key bindings, such as vim</li>
 <li><strong>Scratchpad</strong>: executes code against the current kernel without modifying the notebook document</li>
 <li><strong>Splitcells</strong>: splits cells vertically</li>
 </ul>
-
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!-- raw HTML omitted -->
 
     </div>
 
@@ -181,7 +155,7 @@ The number you select is the minimum time the notebook has to run for you to get
            class="twitter-follow-button"
            data-show-count="false"
            data-show-screen-name="false"></a></h1>
-      <p class="sidebar-bio">Computer Vision engineer at <a href="https://artizans.ai" target="_blank">Artizans</a>, maker of <a href="https://photoroom.app/" target="_blank">PhotoRoom</a>, author of <a href="https://amzn.to/2Znjpht" target="_blank">the book</a> Hands-On Computer Vision with TensorFlow 2 <a href="/about_classic/">More</a></p>
+      <p class="sidebar-bio">CTO at <a href="https://photoroom.com/">Photoroom</a>, author of <a href="https://amzn.to/2Znjpht">the book</a> Hands-On Computer Vision with TensorFlow 2 <a href="/about_classic/">More</a></p>
     </div>
 
 

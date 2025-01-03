@@ -3,7 +3,7 @@
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.58.2" />
+  <meta name="generator" content="Hugo 0.92.2" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -43,7 +43,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 </head>
 
 <body class=" ">
@@ -61,16 +60,10 @@ if (!doNotTrack) {
         
         <span class="post-date">Mon, May 7, 2018</span>
         
-        
-
-<p>Inspired by a <a href="https://medium.com/@hondanhon/i-trained-a-neural-net-to-generate-british-placenames-9460e907e4e9" target="_blank">Dan Hon article</a> on how to generate British placenames, I decided to train my own network to generate startup names.</p>
-
-<p>The <a href="https://github.com/karpathy/char-rnn" target="_blank">original code</a> was made by Andej Karpathy, but there is a more modern and concise version in Keras, <a href="https://github.com/keras-team/keras/blob/master/examples/lstm_text_generation.py" target="_blank">available here</a>.</p>
-
+        <p>Inspired by a <a href="https://medium.com/@hondanhon/i-trained-a-neural-net-to-generate-british-placenames-9460e907e4e9">Dan Hon article</a> on how to generate British placenames, I decided to train my own network to generate startup names.</p>
+<p>The <a href="https://github.com/karpathy/char-rnn">original code</a> was made by Andej Karpathy, but there is a more modern and concise version in Keras, <a href="https://github.com/keras-team/keras/blob/master/examples/lstm_text_generation.py">available here</a>.</p>
 <h1 id="the-results">The results</h1>
-
 <p>Here are a few of my favorites:</p>
-
 <ul>
 <li>Cuyation</li>
 <li>SaleBott</li>
@@ -86,19 +79,12 @@ if (!doNotTrack) {
 <li>bitran</li>
 <li>OpenFactor</li>
 </ul>
-
-<p>You can find a <a href="https://github.com/EliotAndres/char-rnn-tensorflow-js/blob/master/generated.txt" target="_blank">longer list here</a>.</p>
-
+<p>You can find a <a href="https://github.com/EliotAndres/char-rnn-tensorflow-js/blob/master/generated.txt">longer list here</a>.</p>
 <p><strong>Note</strong>: you can&rsquo;t prevent the neural net from generating startup names that already exist. So if you were planing on using any of those, do your own research first.</p>
-
 <h1 id="how-it-works">How it works</h1>
-
-<p>I trained the neural network on 170k startup names. To generate a startup name, you start with 10 random characters as a seed, feed it to the network (a <a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank">LSTM</a>) and ask it to predict the next character.</p>
-
+<p>I trained the neural network on 170k startup names. To generate a startup name, you start with 10 random characters as a seed, feed it to the network (a <a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">LSTM</a>) and ask it to predict the next character.</p>
 <p>You then append the predicted character to the seed, remove the first character (so its length is still 10) and repeat.</p>
-
 <p>If we start with this seed: <code>Kdsdgasdgd</code>, for our last example it looks like this:</p>
-
 <ul>
 <li>model.predict(&lsquo;Kdsdgasdgd&rsquo;) -&gt; returns O</li>
 <li>model.predict(&lsquo;dsdgasdgdO&rsquo;) -&gt; returns p</li>
@@ -107,16 +93,11 @@ if (!doNotTrack) {
 <li>[&hellip;]</li>
 <li>model.predict(&lsquo;OpenFactor&rsquo;) -&gt; returns &lsquo;\n&rsquo; (new line, meaning it&rsquo;s the end of the word)</li>
 </ul>
-
-<p>In summary, we repeatedly call a recurrent neural network. Deepception <a href="https://www.youtube.com/watch?v=UXd0EDy7aTY" target="_blank">(see video)</a></p>
-
+<p>In summary, we repeatedly call a recurrent neural network. Deepception <a href="https://www.youtube.com/watch?v=UXd0EDy7aTY">(see video)</a></p>
 <h1 id="the-code">The code</h1>
-
-<p>If you want to dig deeper, the full code and dataset is available in a <a href="https://github.com/EliotAndres/char-rnn-tensorflow-js/blob/master/python/char-rnn-tensorflow-js.ipynb" target="_blank">notebook here</a>.</p>
-
+<p>If you want to dig deeper, the full code and dataset is available in a <a href="https://github.com/EliotAndres/char-rnn-tensorflow-js/blob/master/python/char-rnn-tensorflow-js.ipynb">notebook here</a>.</p>
 <h1 id="conclusion">Conclusion</h1>
-
-<p>A few months ago, I made a startup pitch generator using Markov chains. You can find the <a href="http://ndres.me/markov-incubator/" target="_blank">demo here</a>. The 2 projects pair well together :-)</p>
+<p>A few months ago, I made a startup pitch generator using Markov chains. You can find the <a href="http://ndres.me/markov-incubator/">demo here</a>. The 2 projects pair well together :-)</p>
 
     </div>
 
@@ -133,7 +114,7 @@ if (!doNotTrack) {
            class="twitter-follow-button"
            data-show-count="false"
            data-show-screen-name="false"></a></h1>
-      <p class="sidebar-bio">Computer Vision engineer at <a href="https://artizans.ai" target="_blank">Artizans</a>, maker of <a href="https://photoroom.app/" target="_blank">PhotoRoom</a>, author of <a href="https://amzn.to/2Znjpht" target="_blank">the book</a> Hands-On Computer Vision with TensorFlow 2 <a href="/about_classic/">More</a></p>
+      <p class="sidebar-bio">CTO at <a href="https://photoroom.com/">Photoroom</a>, author of <a href="https://amzn.to/2Znjpht">the book</a> Hands-On Computer Vision with TensorFlow 2 <a href="/about_classic/">More</a></p>
     </div>
 
 

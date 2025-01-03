@@ -3,7 +3,7 @@
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.58.2" />
+  <meta name="generator" content="Hugo 0.92.2" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -43,7 +43,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 </head>
 
 <body class=" ">
@@ -61,75 +60,55 @@ if (!doNotTrack) {
         
         <span class="post-date">Fri, Oct 19, 2018</span>
         
-        
-
-<p>In this article, I’ll detail the technique I use to solve almost any AI / machine learning project.
+        <p>In this article, I’ll detail the technique I use to solve almost any AI / machine learning project.
 I can already hear you screaming behind your screen <em>« there is no magic approach to ML »</em>  and you’d be right!</p>
-
 <p>I would say that this technique applied to 90% of my projects. Without further ado, <strong>here’s the approach</strong>:</p>
-
 <ol>
 <li>Find a machine learning competition with a problem close to the one you want to solve</li>
 <li>Find the winning team’s solution</li>
 <li>Adapt this solution to your problem</li>
 </ol>
-
 <p>Before detailing each step, I’d like to point out that the winning team solution is not used as is.
- Mostly because your problem will not be perfectly identical to the competition’s problem.</p>
-
-<h2 id="1-finding-a-matching-machine-learning-competition">1 - Finding a matching machine learning competition</h2>
-
-<p>To do so, I recommend using Google or <a href="https://ndres.me/kaggle-past-solutions/" target="_blank">Kaggle Past Solutions</a>. (<strong>disclaimer</strong>: I created Kaggle Past Solutions, precisely for this reason. It’s open-source and free)</p>
-
+Mostly because your problem will not be perfectly identical to the competition’s problem.</p>
+<h2 id="1---finding-a-matching-machine-learning-competition">1 - Finding a matching machine learning competition</h2>
+<p>To do so, I recommend using Google or <a href="https://ndres.me/kaggle-past-solutions/">Kaggle Past Solutions</a>. (<strong>disclaimer</strong>: I created Kaggle Past Solutions, precisely for this reason. It’s open-source and free)</p>
 <p>How to find a matching competition ? Let’s use an example. I was recently working
 on a project to predict the inventory in a warehouse. Since we want to predict future orders,
 the keywords here are « time series » and « forecast ».
 Looking up those keywords in Kaggle Past Solutions yields, among other results,
-the <a href="https://www.kaggle.com/c/favorita-grocery-sales-forecasting" target="_blank">Corporación Favorita Grocery Sales Forecasting competition</a>
+the <a href="https://www.kaggle.com/c/favorita-grocery-sales-forecasting">Corporación Favorita Grocery Sales Forecasting competition</a>
 (&ldquo;Can you accurately predict sales for a large grocery chain? »).</p>
-
 <p>This competition seems similar enough. Indeed, an order from a warehouse must be
 correlated to the sales, so with the same input we might be able to get good results.
- Now let’s move on to choosing a solution.</p>
-
-<h2 id="2-finding-the-winning-team-s-solution">2 - Finding the winning team’s solution</h2>
-
+Now let’s move on to choosing a solution.</p>
+<h2 id="2---finding-the-winning-teams-solution">2 - Finding the winning team’s solution</h2>
 <p>This step should be rephrased into &ldquo;finding a good winning solution&rdquo;. It mostly depends on:</p>
-
 <ul>
 <li>if the source code is available</li>
 <li>if a detailed explanation is available</li>
 <li>the complexity of the solution. Many Kaggle solutions use
-<a href="http://blog.kaggle.com/2016/12/27/a-kagglers-guide-to-model-stacking-in-practice/" target="_blank">stacking</a>
-and <a href="https://en.wikipedia.org/wiki/Ensemble_learning" target="_blank">ensembling</a>, sometimes making
+<a href="http://blog.kaggle.com/2016/12/27/a-kagglers-guide-to-model-stacking-in-practice/">stacking</a>
+and <a href="https://en.wikipedia.org/wiki/Ensemble_learning">ensembling</a>, sometimes making
 them very complex. Thankfully, solutions sometimes offer a « best single model ».</li>
 </ul>
-
-<p>In our example, the <a href="https://www.kaggle.com/c/favorita-grocery-sales-forecasting/discussion/47582" target="_blank">first place solution</a>
+<p>In our example, the <a href="https://www.kaggle.com/c/favorita-grocery-sales-forecasting/discussion/47582">first place solution</a>
 is of very good quality. It quotes sources, contains a good explanation and the linked code is concise and of good quality.</p>
-
-<h2 id="3-adapt-this-solution-to-your-problem">3 - Adapt this solution to your problem</h2>
-
+<h2 id="3---adapt-this-solution-to-your-problem">3 - Adapt this solution to your problem</h2>
 <p>The solution will be used as a baseline. You will know what technology to use
 (convolutions, gradient boosting, LSTMs) and what part of the data to exploit.
 While you will not get a working solution right away, you’ll at least know that
- you’re using the right tools and the right data.</p>
-
+you’re using the right tools and the right data.</p>
 <p>Moreover, you can draw inspiration and learn from:</p>
-
 <ul>
 <li>the way the code is architectured</li>
-<li>the <a href="https://en.wikipedia.org/wiki/Feature_engineering" target="_blank">feature engineering</a></li>
+<li>the <a href="https://en.wikipedia.org/wiki/Feature_engineering">feature engineering</a></li>
 <li>the libraries used</li>
 </ul>
-
 <p>In our example, the solution is using an ensemble of LSTMs and gradient boosting.
- Reading the code, I also learned about <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html" target="_blank">pandas.read_csv</a>&rsquo;s
- <code>converters</code> argument.</p>
-
-<h2 id="what-s-next">What&rsquo;s next</h2>
-
-<p>At this point you should have a very good baseline, built upon <a href="https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants" target="_blank">the shoulders of kaggle masters</a>.
+Reading the code, I also learned about <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html">pandas.read_csv</a>&rsquo;s
+<code>converters</code> argument.</p>
+<h2 id="whats-next">What&rsquo;s next</h2>
+<p>At this point you should have a very good baseline, built upon <a href="https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants">the shoulders of kaggle masters</a>.
 From this point, it&rsquo;s all about improving your model. And if you get good results, don&rsquo;t forget to thank the authors of the solution.</p>
 
     </div>
@@ -147,7 +126,7 @@ From this point, it&rsquo;s all about improving your model. And if you get good 
            class="twitter-follow-button"
            data-show-count="false"
            data-show-screen-name="false"></a></h1>
-      <p class="sidebar-bio">Computer Vision engineer at <a href="https://artizans.ai" target="_blank">Artizans</a>, maker of <a href="https://photoroom.app/" target="_blank">PhotoRoom</a>, author of <a href="https://amzn.to/2Znjpht" target="_blank">the book</a> Hands-On Computer Vision with TensorFlow 2 <a href="/about_classic/">More</a></p>
+      <p class="sidebar-bio">CTO at <a href="https://photoroom.com/">Photoroom</a>, author of <a href="https://amzn.to/2Znjpht">the book</a> Hands-On Computer Vision with TensorFlow 2 <a href="/about_classic/">More</a></p>
     </div>
 
 

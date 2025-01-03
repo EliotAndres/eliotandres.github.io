@@ -3,7 +3,7 @@
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.58.2" />
+  <meta name="generator" content="Hugo 0.92.2" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -43,7 +43,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 </head>
 
 <body class=" ">
@@ -61,14 +60,9 @@ if (!doNotTrack) {
         
         <span class="post-date">Mon, May 14, 2018</span>
         
-        
-
-<p><strong>Edit</strong>: There is now a much better and simpler way of creating gifs, a <a href="https://github.com/maxhumber/gif" target="_blank">libray called &ldquo;gif&rdquo;</a></p>
-
+        <p><strong>Edit</strong>: There is now a much better and simpler way of creating gifs, a <a href="https://github.com/maxhumber/gif">libray called &ldquo;gif&rdquo;</a></p>
 <h2 id="the-problem">The problem</h2>
-
 <p>If you Google how to make an animated Matplotlib graph, you end up with code like that:</p>
-
 <pre><code>fig, ax = plt.subplots()
 
 x = np.arange(0, 2*np.pi, 0.01)
@@ -85,13 +79,9 @@ def init():
 
 ani = animation.FuncAnimation(fig, animate, np.arange(1, 200), init_func=init, interval=25, blit=True)
 </code></pre>
-
 <p>The logic of using an init function and methods such as <code>set_ydata</code> is a bit <strong>too complex</strong> for my taste, so I ended up using a different approach</p>
-
 <h2 id="the-simple-solution">The simple solution</h2>
-
-<p>The idea is to build an array of images and to convert it to a gif. To do so you need <a href="https://imageio.github.io/" target="_blank">Imageio</a>.</p>
-
+<p>The idea is to build an array of images and to convert it to a gif. To do so you need <a href="https://imageio.github.io/">Imageio</a>.</p>
 <pre><code>import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
@@ -122,12 +112,9 @@ def plot_for_offset(power, y_max):
 kwargs_write = {'fps':1.0, 'quantizer':'nq'}
 imageio.mimsave('./powers.gif', [plot_for_offset(i/4, 100) for i in range(10)], fps=1)
 </code></pre>
-
 <h2 id="result">Result</h2>
-
-<figure>
-    <img src="/images/powers.gif"
-         alt="Result of the code above"/> <figcaption>
+<figure><img src="/images/powers.gif"
+         alt="Result of the code above"/><figcaption>
             <p>Result of the code above</p>
         </figcaption>
 </figure>
@@ -148,7 +135,7 @@ imageio.mimsave('./powers.gif', [plot_for_offset(i/4, 100) for i in range(10)], 
            class="twitter-follow-button"
            data-show-count="false"
            data-show-screen-name="false"></a></h1>
-      <p class="sidebar-bio">Computer Vision engineer at <a href="https://artizans.ai" target="_blank">Artizans</a>, maker of <a href="https://photoroom.app/" target="_blank">PhotoRoom</a>, author of <a href="https://amzn.to/2Znjpht" target="_blank">the book</a> Hands-On Computer Vision with TensorFlow 2 <a href="/about_classic/">More</a></p>
+      <p class="sidebar-bio">CTO at <a href="https://photoroom.com/">Photoroom</a>, author of <a href="https://amzn.to/2Znjpht">the book</a> Hands-On Computer Vision with TensorFlow 2 <a href="/about_classic/">More</a></p>
     </div>
 
 
